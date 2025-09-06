@@ -2,8 +2,8 @@ let dropdown = document.querySelector(".dropdown");
 let menu = document.querySelector(".menu-icon");
 let ip = document.querySelectorAll(".ip");
 let ping = document.querySelector(".ping");
-let statusOnline = document.querySelector(".status-online");
-let statusOffline = document.querySelector(".status-offline");
+let statusOnline = document.querySelector("#status-online");
+let statusOffline = document.querySelector("#status-offline");
 let playerCount = document.querySelector(".player-count")
 
 const api = "https://api.mcstatus.io/v2/status/java/play.horizion.in:25565"
@@ -46,9 +46,6 @@ async function updatePlayerCount() {
       const data = await pc.json();
       const status = data.online
       const players = data.players.online
-
-      console.log(data.online);
-      console.log(data.players.online);
 
       if(status) {
             statusOnline.style.removeProperty('display');
