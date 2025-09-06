@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" type="image/png" href="/img/favicon.png">
+      <title>Horizion Network</title>
+      <link rel="stylesheet" href="./src/output.css">
+</head>
+<body class="">
+
+
+      <!-- navbar -->
+       
+      <header class="flex justify-between items-center bg-white/30 backdrop-blur-3xl fixed top-0 left-0 w-full z-50">
+            <div class="flex items-center">
+                  <img src="/img/favicon.png" alt="logo" class="logo max-h-16 max-w-16 px-2">
+                  <div class="font-bold text-xl text-lime-700">Horizion Network</div>
+            </div>
+            <div class="hidden sm:flex justify-center items-center">
+                  <ul class="flex">
+                        <li class="mx-2 md:mx-3 lg:mx-6 border-b-2 border-green-200 hover:border-b-2 hover:border-black hover:cursor-pointer">Home</li>
+                        <li class="mx-2 md:mx-3 lg:mx-6 border-b-2 border-green-200 hover:border-b-2 hover:border-black hover:cursor-pointer">Store</li>
+                        <li class="mx-2 md:mx-3 lg:mx-6 border-b-2 border-green-200 hover:border-b-2 hover:border-black hover:cursor-pointer">Discord</li>
+                        <li class="mx-2 md:mx-3 lg:mx-6 border-b-2 border-green-200 hover:border-b-2 hover:border-black hover:cursor-pointer">Vote</li>
+                  </ul>
+                  <button class="ip mx-2 md:mx-3 px-2 md:px-3 lg:px-4 p-1 border-2 border-green-600">PLAY.HORIZION.IN</button>
+            </div>
+            <img src="/img/menu.png" alt="menu" class="menu-icon h-8 w-8 sm:hidden mx-5">
+
+            
+      </header>
+      
+      <div class = "relative">
+
+            <!-- navbar dropdown --> 
+
+            <ul class="dropdown absolute sm:hidden pt-14 py-5 w-[100%] flex-col justify-items-center bg-green-400">
+                        <li class="text-3xl py-5 border-b-2 border-green-200 hover:border-b-2 hover:border-black hover:cursor-pointer">Home</li>
+                        <li class="text-3xl py-5 border-b-2 border-green-200 hover:border-b-2 hover:border-black hover:cursor-pointer">Store</li>
+                        <li class="text-3xl py-5 border-b-2 border-green-200 hover:border-b-2 hover:border-black hover:cursor-pointer">Discord</li>
+                        <li class="text-3xl py-5 border-b-2 border-green-200 hover:border-b-2 hover:border-black hover:cursor-pointer">Vote</li>
+            </ul>
+
+            <!-- hero -->
+
+            <div class="bg-[url(/img/hero.png)] w-full h-screen bg-cover bg-center flex flex-col items-center text-center align-middle justify-center text-white">
+                  <img src="img/hz.png" class="h-20 sm:h-28 max-sm:h-14 hover:scale-110  tranistion ease-in-out duration-300"></img>
+                  
+                  <div class="flex my-8 items-center">
+                        <button class="ip bg-white/30 flex items-center rounded-sm border border-green-500 py-2 px-6 text-center align-middle text-xl font-bold text-black transition-all hover:opacity-75 focus:ring focus:ring-green-200 active:opacity-[0.85]" type="button">Join Now</button>
+                        <div class="status-online relative flex ping">
+                              <span class="relative ml-2 bg-green-600 rounded-full h-3 w-3"></span>
+                              <span class="absolute ml-2 animate-ping bg-green-600 rounded-full h-3 w-3"></span>
+                        </div>
+                        <div class="status-offline relative flex ping">
+                              <span class="relative ml-2 bg-red-600 rounded-full h-3 w-3"></span>
+                              <span class="absolute ml-2 animate-ping bg-red-600 rounded-full h-3 w-3"></span>
+                        </div>
+                        <div class="player-count mx-2 text-white font-bold flex">0 Online Players</div>
+                  </div>
+            </div>
+      </div>
+
+
+      
+
+
+      <script src="script.js"></script>
+</body>
+</html>
