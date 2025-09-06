@@ -1,5 +1,6 @@
 let dropdown = document.querySelector(".dropdown");
-let menu = document.querySelector(".menu-icon");
+let menuIcon = document.querySelector(".menu-icon");
+let closeIcon = document.querySelector(".close-icon");
 let ip = document.querySelectorAll(".ip");
 let ping = document.querySelector(".ping");
 let statusOnline = document.querySelector("#status-online");
@@ -15,24 +16,44 @@ window.onload = () => {
       dropdown.style.removeProperty('display');
       dropdown.style.display = "none";
       menuHidden = false;
-      updatePlayerCount();
+      closeIcon.style.removeProperty('display');
+      closeIcon.style.display = "none";
 };
 
-menu.onclick = () => {
-      if(menuHidden) {
-            dropdown.style.removeProperty('display');
-            ping.style.removeProperty('display');
-            dropdown.style.display = "none";
-            menuHidden = false;
-      }
-      else {
-            dropdown.style.removeProperty('display');
-            ping.style.removeProperty('display');
-            dropdown.style.display = "block";
-            ping.style.display = "none";
-            menuHidden = true;
-      }
+// side menu toogle
+
+menuIcon.onclick = () => {
+      dropdown.style.removeProperty('display');
+      dropdown.style.display = "block";
+      
+      closeIcon.style.removeProperty('display');
+      menuIcon.style.removeProperty('display');
+      menuIcon.style.display = "none";
 };
+
+closeIcon.onclick = () => {
+      dropdown.style.removeProperty('display');
+      dropdown.style.display = "none";
+      
+      menuIcon.style.removeProperty('display');
+      closeIcon.style.removeProperty('display');
+      closeIcon.style.display = "none";
+};
+
+// menuIcon.onclick = () => {
+//       if(menuHidden) {
+//             dropdown.style.removeProperty('display');
+//             dropdown.style.display = "none";
+//             menuHidden = false;
+//       }
+//       else {
+//             dropdown.style.removeProperty('display');
+//             dropdown.style.display = "block";
+//             menuHidden = true;
+//       }
+// };
+
+// ip copy button
 
 ip.forEach((click) => {
       click.addEventListener("click", () => {
@@ -41,11 +62,16 @@ ip.forEach((click) => {
       
 });
 
+// player count and status updater
+
 async function updatePlayerCount() {
       const pc = await fetch(api)
       const data = await pc.json();
       const status = data.online
       const players = data.players.online
+
+      statusOnline.style.removeProperty('display');
+      statusOnline.style.display = "flex";
 
       if(status) {
             statusOnline.style.removeProperty('display');
@@ -64,26 +90,6 @@ async function updatePlayerCount() {
 
 }
 
+updatePlayerCount();
 
-// async function updatePlayerCount() {
-//   try {
-//     const res = await fetch(
-//       "https://api.mcstatus.io/v2/status/java/play.bitcraftnetwork.fun"
-//     );
-//     if (!res.ok) throw new Error("Failed to fetch server status");
-//     const data = await res.json();
-//     const countEl = document.getElementById("player-count");
-//     countEl.textContent = data.online ? data.players?.online ?? 0 : 0;
-//   } catch (err) {
-//     console.error(err);
-//     document.getElementById("player-count").textContent = "0";
-//   }
-// }
-
-// // Update on page load
-// updatePlayerCount();
-
-// // Refresh every 60 seconds
-// setInterval(updatePlayerCount, 60000);
-
-
+setInterval(updatePlayerCount, 60000);
