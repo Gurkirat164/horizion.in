@@ -7,16 +7,17 @@
       <title>Horizion Network</title>
       <link rel="stylesheet" href="./src/output.css">
 </head>
-<body class="">
+<body class="body">
 
 
       <!-- navbar -->
        
-      <header class="flex justify-between items-center bg-white/30 backdrop-blur-3xl fixed top-0 left-0 w-full z-50">
+      <header class="flex justify-between items-center fixed top-0 left-0 w-full z-50">
             <div class="flex items-center">
                   <img src="./img/favicon.png" alt="logo" class="logo max-h-16 max-w-16 px-2">
                   <div class="font-bold text-xl text-[#2fa101]">Horizion Network</div>
             </div>
+
             <div class="hidden sm:flex justify-center items-center">
                   <ul class="flex">
                         <li class="mx-2 md:mx-3 lg:mx-6 border-b-2 border-green-200 hover:border-b-2 hover:border-black hover:cursor-pointer">Home</li>
@@ -30,25 +31,27 @@
             <!-- menu and close icon -->
 
             <img src="./img/menu.png" alt="menu" class="menu-icon h-8 w-8 sm:hidden mx-5">
-            <img src="./img/close.png" alt="close" class="close-icon h-8 w-8 sm:hidden mx-5">
+            <!-- <img src="./img/close.png" alt="close" class="close-icon h-8 w-8 sm:hidden mx-5 z-[110]"> -->
 
             
       </header>
       
       <div class = "relative">
 
-            <!-- navbar dropdown --> 
+            <!-- sidebar --> 
+            <div class="sidebar fixed sm:hidden pt-12 pb-2 w-[75%] h-[100%] flex flex-col bg-white/80 top-0 right-0 z-50 border-r-2 border-2 border-black transition-transform duration-500 transform translate-x-full">
+                  <div class="border-b-2 border-black">
 
-            <ul class="dropdown absolute sm:hidden pt-12 pb-2 w-[100%] flex flex-col bg-white/40">
-                        <li class="text-2xl py-3 mx-3">Home</li>
-                        <hr>
-                        <li class="text-2xl py-3 mx-3">Store</li>
-                        <hr>
-                        <li class="text-2xl py-3 mx-3">Discord</li>
-                        <hr>
-                        <li class="text-2xl py-3 mx-3">Vote</li>
-                        <hr>
-            </ul>
+                        <img src="./img/close.png" alt="close" class=" absolute close-icon h-8 w-8 sm:hidden mx-5 top-2 right-0">
+                  </div>        
+                  <ul>
+                        <li class="text-xl px-2 py-1 mx-3 my-3 border-2 rounded-sm">Home</li>
+                        <li class="text-xl px-2 py-1 mx-3 my-3 border-2 rounded-sm">Store</li>
+                        <li class="text-xl px-2 py-1 mx-3 my-3 border-2 rounded-sm">Discord</li>
+                        <li class="text-xl px-2 py-1 mx-3 my-3 border-2 rounded-sm">Vote</li>
+                  </ul>
+
+            </div>
 
             <!-- hero -->
 
@@ -74,6 +77,7 @@
                   </div>
             </div>
       </div>
+      
       <script src="script.js"></script>
 </body>
 </html>
