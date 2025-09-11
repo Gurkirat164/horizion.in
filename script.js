@@ -6,7 +6,8 @@ let ping = document.querySelector(".ping");
 let statusOnline = document.querySelector("#status-online");
 let statusOffline = document.querySelector("#status-offline");
 let playerCount = document.querySelector(".player-count")
-let body = document = document.querySelector(".body")
+let body = document.querySelector(".body")
+let sidebarList = document.querySelectorAll(".sidebar-list")
 
 const api = "https://api.mcstatus.io/v2/status/java/play.horizion.in:25565"
 
@@ -45,6 +46,18 @@ closeIcon.onclick = () => {
       closeIcon.style.removeProperty('display');
       closeIcon.style.display = "none";
 };
+
+sidebarList.forEach((click) => {
+      click.addEventListener("click", () => {
+            sidebar.classList.remove('translate-x-0');
+            sidebar.classList.add('translate-x-full');
+
+            menuIcon.style.removeProperty('display');
+            closeIcon.style.removeProperty('display');
+            closeIcon.style.display = "none";
+      });
+      
+});
 
 // ip copy button
 

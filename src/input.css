@@ -3,4 +3,7 @@
 
 @theme {
   --font-minecraft: "Minecraft", sans-serif; 
+  --breakpoint-xxs: 25rem;
+  --breakpoint-xs: 30rem;
+
 }
