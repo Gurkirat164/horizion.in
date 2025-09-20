@@ -1,8 +1,6 @@
-@import url('https://fonts.cdnfonts.com/css/minecraft-4');
 @import "tailwindcss";
 
 @theme {
-  --font-minecraft: "Minecraft", sans-serif; 
   --breakpoint-xxs: 25rem;
   --breakpoint-xs: 30rem;
 
