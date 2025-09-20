@@ -1,0 +1,15 @@
+# robots.txt for Horizion Network
+# Allow all search engines to crawl everything except sensitive folders
+User-agent: *
+Disallow: /img/private/
+Disallow: /admin/
+Disallow: /scripts/
+
+# Allow everything else
+Allow: /
+
+# Sitemap for better SEO
+Sitemap: https://horizion.in/sitemap.xml
+
+# Crawl-delay for polite crawling (optional, uncomment if needed)
+# Crawl-delay: 10
