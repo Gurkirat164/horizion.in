@@ -4,9 +4,9 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="icon" type="image/png" href="./img/favicon.png" alt="favicon>
-      <link rel="preload" fetchpriority="high" as="image" href="./img/hz.png" type="image/png">
-      <link rel="preload" fetchpriority="high" as="image" href="./img/hero.png" type="image/png">
+      <link rel="icon" type="image/png" href="../src/img/favicon.png" alt="favicon">
+      <link rel="preload" fetchpriority="high" as="image" href="../src/img/hz.png" type="image/png">
+      <link rel="preload" fetchpriority="high" as="image" href="../src/img/hero.png" type="image/png">
       <title>Horizion Network | Epic Minecraft Adventures</title>
 
       <!-- Basic Meta Tags -->
@@ -20,7 +20,7 @@
             content="Join Horizion Network for an unforgettable Minecraft adventure! Explore custom maps, unique gameplay, and a welcoming community of gamers.">
       <meta property="og:type" content="website">
       <meta property="og:url" content="https://horizion.in">
-      <meta property="og:image" content="https://horizion.in/img/hz.png">
+      <meta property="og:image" content="https://horizion.in/src/img/hz.png">
       <meta property="og:image:width" content="1200">
       <meta property="og:image:height" content="630">
       <meta property="og:image:alt" content="Horizion Network Minecraft server logo">
@@ -29,7 +29,7 @@
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:title" content="Horizion Network | Epic Minecraft Adventures">
       <meta name="twitter:description" content="Join Horizion Network for an unforgettable Minecraft adventure! Explore custom maps, unique gameplay, and a welcoming community of gamers.">
-      <meta name="twitter:image" content="https://horizion.in/img/hz.png">
+      <meta name="twitter:image" content="https://horizion.in/src/img/hz.png">
 
       <!-- Additional Meta Tags (For rich engagement) -->
       <meta property="og:site_name" content="Horizion Network">
@@ -47,7 +47,7 @@
       <meta property="og:game:platform" content="PC, Console, Mobile">
 
       <!-- Link to your styles -->
-      <link rel="stylesheet" href="./src/output.css">
+      <link rel="stylesheet" href="../src/css/output.css">
 </head>
 <body class="body bg-gray-900">
 
@@ -55,39 +55,39 @@
 
       <header class="flex justify-between bg-gray-800 items-center fixed w-full z-50">
             <div class="flex items-center">
-                  <img src="./img/favicon.png" alt="logo" class="logo max-h-16 max-w-16 px-2">
+                  <img src="../src/img/favicon.png" alt="logo" class="logo max-h-16 max-w-16 px-2">
                   <!-- <div class="font-bold text-xl text-[#2fa101]">Horizion Network</div> -->
             </div>
 
             <div class="hidden sm:flex justify-center items-center">
                   <ul class="flex text-white">
                         <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer">
-                              <a href="#" class="flex">
-                                    <img src="/img/home.svg" alt="home-icon" class="h-5 pr-1 mt-0.5">
+                              <a href="index.html" class="flex">
+                                    <img src="../src/img/home.svg" alt="home-icon" class="h-5 pr-1 mt-0.5">
                                     Home
                               </a>
                         </li>
                         <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer">
-                              <a href="#gamemode" class="flex">
-                                    <img src="/img/game.svg" alt="gamemode-icon" class="h-5 pr-1 mt-0.5">
+                              <a href="index.html#gamemode" class="flex">
+                                    <img src="../src/img/game.svg" alt="gamemode-icon" class="h-5 pr-1 mt-0.5">
                                     Gamemode
                               </a>
                         </li>
                         <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer">
-                              <a href="#store" class="flex">
-                                    <img src="/img/shop.svg" alt="store-icon" class="h-5 pr-1 mt-0.5">
+                              <a href="index.html#store" class="flex">
+                                    <img src="../src/img/shop.svg" alt="store-icon" class="h-5 pr-1 mt-0.5">
                                     Store
                               </a>
                         </li>
                         <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer">
                               <a href="https://horizion.in/discord" target="_blank" class="flex">
-                                    <img src="/img/discord.svg" alt="discord-icon" class="h-5 pr-1 mt-0.5">
+                                    <img src="../src/img/discord.svg" alt="discord-icon" class="h-5 pr-1 mt-0.5">
                                     Discord
                               </a>
                         </li>
                         <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer">
-                              <a href="#vote" class="flex">
-                                    <img src="/img/vote.svg" alt="vote-icon" class="h-5 pr-1 mt-0.5">
+                              <a href="index.html#vote" class="flex">
+                                    <img src="../src/img/vote.svg" alt="vote-icon" class="h-5 pr-1 mt-0.5">
                                     Vote
                               </a>
                         </li>
@@ -97,7 +97,7 @@
 
             <!-- menu and close icon -->
 
-            <img src="./img/menu.svg" alt="menu" class="menu-icon h-8 w-8 sm:hidden mx-5">
+            <img src="../src/img/menu.svg" alt="menu" class="menu-icon h-8 w-8 sm:hidden mx-5">
             
       </header>
       
@@ -108,34 +108,36 @@
             <div class="sidebar fixed sm:hidden pt-12 pb-2 w-[75%] xxs:w-[60%] xs:w-[50%] h-[100%] flex flex-col bg-gray-800 top-0 right-0 z-50 border border-gray-700 transition-transform duration-300 transform translate-x-full text-white">
                   <div class="border-b-2 border-gray-700">
 
-                        <img src="./img/close.svg" alt="close" class=" absolute close-icon h-8 w-8 sm:hidden mx-5 top-2 right-0">
+                        <img src="../src/img/close.svg" alt="close" class=" absolute close-icon h-8 w-8 sm:hidden mx-5 top-2 right-0">
                   </div>        
                   <ul class="sidebar-list">
-                        <li class="px-2 py-1 mx-3 my-3"><a href="#" class="flex">
-                                    <img src="/img/home.svg" alt="home-icon" class="h-5 pr-1 mt-0.5">
+                        <li class="px-2 py-1 mx-3 my-3">
+                              <a href="index.html" class="flex">
+                                    <img src="../src/img/home.svg" alt="home-icon" class="h-5 pr-1 mt-0.5">
                                     Home
                               </a>
                         </li>
-                        <li class="px-2 py-1 mx-3 my-3"><a href="#gamemode" class="flex">
-                                    <img src="/img/game.svg" alt="gamemode-icon" class="h-5 pr-1 mt-0.5">
+                        <li class="px-2 py-1 mx-3 my-3">
+                              <a href="index.html#gamemode" class="flex">
+                                    <img src="../src/img/game.svg" alt="gamemode-icon" class="h-5 pr-1 mt-0.5">
                                     Gamemode
                               </a>
                         </li>
                         <li class="px-2 py-1 mx-3 my-3">
-                              <a href="#store" class="flex">
-                                    <img src="/img/shop.svg" alt="store-icon" class="h-5 pr-1 mt-0.5">
+                              <a href="index.html#store" class="flex">
+                                    <img src="../src/img/shop.svg" alt="store-icon" class="h-5 pr-1 mt-0.5">
                                     Store
                               </a>
                         </li>
                         <li class="px-2 py-1 mx-3 my-3">
                               <a href="https://horizion.in/discord" target="_blank" class="flex">
-                                    <img src="/img/discord.svg" alt="discord-icon" class="h-5 pr-1 mt-0.5">
+                                    <img src="../src/img/discord.svg" alt="discord-icon" class="h-5 pr-1 mt-0.5">
                                     Discord
                               </a>
                         </li>
                         <li class="px-2 py-1 mx-3 my-3">
-                              <a href="#vote" class="flex">
-                                    <img src="/img/vote.svg" alt="vote-icon" class="h-5 pr-1 mt-0.5">
+                              <a href="index.html#vote" class="flex">
+                                    <img src="../src/img/vote.svg" alt="vote-icon" class="h-5 pr-1 mt-0.5">
                                     Vote
                               </a>
                         </li>
@@ -145,8 +147,8 @@
 
             <!-- hero -->
 
-            <div class="bg-[url(/img/hero.png)] w-full h-screen bg-cover bg-center flex flex-col items-center text-center align-middle justify-center text-white mask-b-from-80%">
-                  <img src="img/hz.png" alt="hz" class="h-20 sm:h-28 max-sm:h-14 hover:scale-110  tranistion ease-in-out duration-300"></img>
+            <div style="background-image: url('../src/img/hero.png');" class="w-full h-screen bg-cover bg-center flex flex-col items-center text-center align-middle justify-center text-white mask-b-from-80%">
+                  <img src="../src/img/hz.png" alt="hz" class="h-20 sm:h-28 max-sm:h-14 hover:scale-110  tranistion ease-in-out duration-300"></img>
                   
                   <div class="flex my-8 items-center">
                         <button class="ip bg-white/30 flex items-center rounded-sm border border-green-500 py-2 px-6 text-center align-middle text-xl font-bold text-black transition-all hover:opacity-75 focus:ring focus:ring-green-200 active:opacity-[0.85]" type="button">Join Now</button>
@@ -179,7 +181,7 @@
             <!-- Survival -->
 
             <div class="max-w-[22rem] my-2 border rounded-lg shadow-sm bg-gray-800 border-gray-700 hover:scale-105 transition ease-in-out duration-300">
-                  <img src="./img/hero.png" alt="survival" class="rounded-t-lg">
+                  <img src="../src/img/hero.png" alt="survival" class="rounded-t-lg">
                   <div class="p-5">
                         <div class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                               Survival
@@ -194,7 +196,7 @@
             <!-- Bedwars -->
 
             <div class="max-w-[22rem] my-2 border rounded-lg shadow-sm bg-gray-800 border-gray-700 hover:scale-105 transition ease-in-out duration-300">
-                  <img src="./img/hero.png" alt="bedwars" class="rounded-t-lg">
+                  <img src="../src/img/hero.png" alt="bedwars" class="rounded-t-lg">
                   <div class="p-5">
                         <div class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                               Bedwars
@@ -208,7 +210,7 @@
             <!-- Arcade -->
 
             <div class="max-w-[22rem] my-2 border rounded-lg shadow-sm bg-gray-800 border-gray-700 hover:scale-105 transition ease-in-out duration-300">
-                  <img src="./img/hero.png" alt="arcade" class="rounded-t-lg">
+                  <img src="../src/img/hero.png" alt="arcade" class="rounded-t-lg">
                   <div class="p-5">
                         <div class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                               Arcade
@@ -248,19 +250,19 @@
                                     <h4 class="text-white text-lg font-semibold mb-3">Perks</h4>
                                     <ul class="mt-4 space-y-2">
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 2 Ah Limit
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 2 Jobs Limit
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 2 Set Home
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 15 Chest Shop
                                           </li>
                                     </ul>
@@ -268,11 +270,11 @@
                                     <h4 class="text-white text-lg font-semibold mb-3 mt-6">Commands</h4>
                                     <ul class="space-y-2">
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /chatcolor
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /nick
                                           </li>
                                     </ul>
@@ -280,11 +282,11 @@
                                     <h4 class="text-white text-lg font-semibold mb-3 mt-6">Bonus</h4>
                                     <ul class="space-y-2">
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 2.5k Claim Blocks
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 VIP Kit (Cooldown 7 Days)
                                           </li>
                                     </ul>
@@ -311,19 +313,19 @@
                                     <h4 class="text-white text-lg font-semibold mb-3">Perks</h4>
                                     <ul class="mt-4 space-y-2">
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 3 Ah Limit
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 2 Jobs Limit
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 3 Set Home
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 20 Chest Shop
                                           </li>
                                     </ul>
@@ -331,23 +333,23 @@
                                     <h4 class="text-white text-lg font-semibold mb-3 mt-6">Commands</h4>
                                     <ul class="space-y-2">
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /chatcolor
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /nick
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /sit
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /enderchest
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /craft
                                           </li>
                                     </ul>
@@ -355,11 +357,11 @@
                                     <h4 class="text-white text-lg font-semibold mb-3 mt-6">Bonus</h4>
                                     <ul class="space-y-2">
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 5k Claim Blocks
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 MVP Kit (Cooldown 7 Days)
                                           </li>
                                     </ul>
@@ -386,19 +388,19 @@
                                     <h4 class="text-white text-lg font-semibold mb-3">Perks</h4>
                                     <ul class="mt-4 space-y-2">
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 4 Ah Limit
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 3 Jobs Limit
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 4 Set Home
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 25 Chest Shop
                                           </li>
                                     </ul>
@@ -406,35 +408,35 @@
                                     <h4 class="text-white text-lg font-semibold mb-3 mt-6">Commands</h4>
                                     <ul class="space-y-2">
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /chatcolor
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /nick
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /sit
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /enderchest
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /craft
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /feed
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /anvil
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /spin
                                           </li>
                                     </ul>
@@ -442,11 +444,11 @@
                                     <h4 class="text-white text-lg font-semibold mb-3 mt-6">Bonus</h4>
                                     <ul class="space-y-2">
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 7.5k Claim Blocks
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 Elite Kit (Cooldown 7 Days)
                                           </li>
                                     </ul>
@@ -473,19 +475,19 @@
                                     <h4 class="text-white text-lg font-semibold mb-3">Perks</h4>
                                     <ul class="mt-4 space-y-2">
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 4 Ah Limit
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 3 Jobs Limit
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 6 Set Home
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 30 Chest Shop
                                           </li>
                                     </ul>
@@ -493,47 +495,47 @@
                                     <h4 class="text-white text-lg font-semibold mb-3 mt-6">Commands</h4>
                                     <ul class="space-y-2">
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /chatcolor
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /nick
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /sit
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /enderchest
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /craft
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /feed
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /anvil
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /hat
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /lay
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /crawl
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 /spin
                                           </li>
                                     </ul>
@@ -541,11 +543,11 @@
                                     <h4 class="text-white text-lg font-semibold mb-3 mt-6">Bonus</h4>
                                     <ul class="space-y-2">
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 10k Claim Blocks
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 Immortal Kit (Cooldown 7 Days)
                                           </li>
                                     </ul>
@@ -579,7 +581,7 @@
 
                         <div class="border border-gray-700 shadow-sm rounded-md p-6 bg-gray-800 flex flex-col h-full hover:scale-105 transition ease-in-out duration-300">
                               <div class="flex items-center mb-4">
-                                    <img src="./img/vote.svg" alt="vote" class="h-8 w-8 mr-3">
+                                    <img src="../src/img/vote.svg" alt="vote" class="h-8 w-8 mr-3">
                                     <h3 class="text-white text-xl font-semibold">Minecraft-MP</h3>
                               </div>
                               
@@ -587,19 +589,19 @@
                                     <h4 class="text-white text-lg font-semibold mb-3">Vote Rewards</h4>
                                     <ul class="space-y-2">
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 1x Vote Key
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 $100 In-Game Money
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 100 Claim Blocks
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 5x Coins
                                           </li>
                                     </ul>
@@ -616,7 +618,7 @@
 
                         <div class="border border-gray-700 shadow-sm rounded-md p-6 bg-gray-800 flex flex-col h-full hover:scale-105 transition ease-in-out duration-300">
                               <div class="flex items-center mb-4">
-                                    <img src="./img/vote.svg" alt="vote" class="h-8 w-8 mr-3">
+                                    <img src="../src/img/vote.svg" alt="vote" class="h-8 w-8 mr-3">
                                     <h3 class="text-white text-xl font-semibold">TopMinecraftServers.org</h3>
                               </div>
                               
@@ -624,19 +626,19 @@
                                     <h4 class="text-white text-lg font-semibold mb-3">Vote Rewards</h4>
                                     <ul class="space-y-2">
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 1x Vote Key
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 $100 In-Game Money
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 100 Claim Blocks
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 5x Coins
                                           </li>
                                     </ul>
@@ -653,7 +655,7 @@
 
                         <div class="border border-gray-700 shadow-sm rounded-md p-6 bg-gray-800 flex flex-col h-full hover:scale-105 transition ease-in-out duration-300">
                               <div class="flex items-center mb-4">
-                                    <img src="./img/vote.svg" alt="vote" class="h-8 w-8 mr-3">
+                                    <img src="../src/img/vote.svg" alt="vote" class="h-8 w-8 mr-3">
                                     <h3 class="text-white text-xl font-semibold">Minecraft.Buzz</h3>
                               </div>
                               
@@ -661,19 +663,19 @@
                                     <h4 class="text-white text-lg font-semibold mb-3">Vote Rewards</h4>
                                     <ul class="space-y-2">
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 1x Vote Key
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 $100 In-Game Money
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 100 Claim Blocks
                                           </li>
                                           <li class="flex items-center text-[15px] text-gray-400 font-medium">
-                                                <img src="./img/check.svg" alt="check" width="16" class="mr-3">
+                                                <img src="../src/img/check.svg" alt="check" width="16" class="mr-3">
                                                 5x Coins
                                           </li>
                                     </ul>
@@ -692,18 +694,36 @@
 
             <!-- footer  -->
 
-      <footer class="bg-gray-800 text-white mt-10 py-6 border-t border-gray-700">
-                  <div class="max-w-6xl mx-auto px-4 flex flex-col items-center justify-center">
-                        <div class="text-center">
-                              <div class="font-mono text-green-400 text-sm mb-1">Server IP: PLAY.HORIZION.IN</div>
-                              <div class="text-xs text-gray-400">Made with <span class="text-red-500">❤️</span> by Mafia164</div>
-                              <div class="text-xs text-gray-400">© 2025 Horizion Network. All rights reserved.</div>
-                              <div class="text-xs text-gray-500 mt-2">We are not affiliated with Mojang AB or Minecraft.</div>
+      <footer class="bg-gray-800 text-white py-8 border-t border-gray-700">
+            <div class="max-w-6xl mx-auto px-4">
+                  <!-- Top section with IP and links -->
+                  <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+                        <!-- Server IP (Left side on desktop) -->
+                        <div class="flex items-center mb-4 md:mb-0">
+                              <div class="font-mono text-green-500 text-lg font-bold border border-green-500 rounded-md px-4 py-2 bg-gray-900/50">
+                                    PLAY.HORIZION.IN
+                              </div>
+                        </div>
+                        
+                        <!-- Navigation links (Right side on desktop) -->
+                        <div class="flex flex-wrap justify-center">
+                              <a href="privacypolicy.html" class="text-sm text-gray-400 hover:text-white mx-2 my-1">Privacy Policy</a>
+                              <a href="terms&Conditions.html" class="text-sm text-gray-400 hover:text-white mx-2 my-1">Terms and Conditions</a>
+                              <a href="refundPolicy.html" class="text-sm text-gray-400 hover:text-white mx-2 my-1">Refund Policy</a>
+                              <a href="contactUs.html" class="text-sm text-gray-400 hover:text-white mx-2 my-1">Contact Us</a>
                         </div>
                   </div>
+                  
+                  <!-- Bottom section with copyright and credits -->
+                  <div class="pt-4 border-t border-gray-700 text-center">
+                        <p class="text-sm text-gray-400 mb-2">© 2025 Horizion Network. All Rights Reserved.</p>
+                        <div class="text-xs text-gray-400">Made with <span class="text-red-500">❤️</span> by Mafia164</div>
+                        <div class="text-xs text-gray-500 mt-1">We are not affiliated with Mojang AB or Minecraft.</div>
+                  </div>
+            </div>
       </footer>
       
       
-      <script src="script.js"></script>
+      <script src="../src/js/script.js"></script>
 </body>
 </html>
