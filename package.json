@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.13",
+    "razorpay": "^2.9.6",
     "tailwindcss": "^4.1.13"
   }
 }
