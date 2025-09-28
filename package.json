@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "hz": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+    "hz": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch"
   },
   "keywords": [],
   "author": "Mafia164",
