@@ -7,7 +7,8 @@
 async function initiatePayment(amount, customerName, customerEmail) {
   try {
     // Step 1: Create order on your server
-    const response = await fetch('http://localhost:3000/create-order', {
+    // const response = await fetch('http://localhost:3000/create-order', {
+    const response = await fetch('https://horizion-in.onrender.com/create-order', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -20,7 +21,8 @@ async function initiatePayment(amount, customerName, customerEmail) {
     const orderData = await response.json();
     
     // Step 2: Get Razorpay Key from server
-    const keyResponse = await fetch('http://localhost:3000/get-razorpay-key');
+    // const keyResponse = await fetch('http://localhost:3000/get-razorpay-key');
+    const keyResponse = await fetch('https://horizion-in.onrender.com/get-razorpay-key');
     const { key } = await keyResponse.json();
     
     // Step 3: Initialize Razorpay checkout
@@ -41,7 +43,8 @@ async function initiatePayment(amount, customerName, customerEmail) {
             razorpay_signature: response.razorpay_signature
           };
           
-          const paymentVerifyResponse = await fetch('http://localhost:3000/verify-payment', {
+          // const paymentVerifyResponse = await fetch('http://localhost:3000/verify-payment', {
+          const paymentVerifyResponse = await fetch('https://horizion-in.onrender.com/verify-payment', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
