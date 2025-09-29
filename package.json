@@ -5,14 +5,26 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "hz": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+    "hz": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
+    "start:server": "cd Server && node server.js",
+    "dev:server": "cd Server && nodemon server.js",
+    "test:server": "cd Server && node test-env.js"
   },
   "keywords": [],
   "author": "Mafia164",
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.13",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
     "razorpay": "^2.9.6",
     "tailwindcss": "^4.1.13"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "type": "module"
 }

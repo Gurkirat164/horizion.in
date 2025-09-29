@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizion Network - Payment Example</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <style>
+        .payment-card {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: #1f2937;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .payment-btn {
+            background-color: #22c55e;
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .payment-btn:hover {
+            background-color: #16a34a;
+            transform: translateY(-2px);
+        }
+        .payment-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #374151;
+        }
+        .payment-total {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            font-weight: bold;
+            margin-top: 10px;
+            border-top: 2px solid #374151;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <header class="flex justify-between bg-gray-800 items-center p-4">
+        <div class="flex items-center">
+            <img src="./img/favicon.png" alt="logo" class="max-h-16 max-w-16 px-2">
+            <h1 class="text-xl font-bold">Horizion Network</h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="payment-card">
+            <h2 class="text-2xl font-bold mb-6 text-center text-green-500">Premium Rank Purchase</h2>
+            
+            <div class="payment-item">
+                <span>Premium Rank (1 month)</span>
+                <span>₹999.00</span>
+            </div>
+            
+            <div class="payment-item">
+                <span>Server Perks</span>
+                <span>Included</span>
+            </div>
+            
+            <div class="payment-item">
+                <span>Special Badge</span>
+                <span>Included</span>
+            </div>
+            
+            <div class="payment-total">
+                <span>Total</span>
+                <span>₹999.00</span>
+            </div>
+            
+            <!-- Payment button with data attributes -->
+            <button 
+                id="pay-btn" 
+                class="payment-btn"
+                data-amount="999"
+                data-name="Minecraft Player"
+                data-email="player@example.com"
+            >
+                Proceed to Payment
+            </button>
+            
+            <p class="text-sm text-gray-400 mt-4 text-center">
+                By clicking the button above, you agree to our Terms and Conditions.
+            </p>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4 text-center mt-8">
+        <p>© 2025 Horizion Network. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Razorpay SDK -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    
+    <!-- Your payment script -->
+    <script src="./payment.js"></script>
+</body>
+</html>
