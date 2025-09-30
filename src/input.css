@@ -24,12 +24,6 @@
   animation: slideOut 0.3s ease-in forwards;
 }
 
-/* Ripple effect for buttons */
-@keyframes ripple {
-  0% { transform: scale(0); opacity: 1; }
-  100% { transform: scale(3); opacity: 0; }
-}
-
 /* Tooltip arrow */
 .tooltip::after {
   content: '';

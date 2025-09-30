@@ -12,96 +12,136 @@
             
       <!-- navbar -->
 
-      <header class="flex justify-between bg-gray-800 items-center fixed w-full z-50">
-            <div class="flex items-center">
-                  <img src="./img/favicon.png" alt="logo" class="logo max-h-16 max-w-16 px-2">
-                  <!-- <div class="font-bold text-xl text-[#2fa101]">Horizion Network</div> -->
+      <header class="bg-gray-800 fixed w-full z-50 px-4 py-2 shadow-lg">
+            <div class="flex justify-between lg:grid lg:grid-cols-4 items-center h-full">
+                  <!-- Left - Logo -->
+                  <div class="flex items-center justify-start">
+                        <img src="./img/favicon.png" alt="logo" class="logo h-12 w-12">
+                  </div>
+
+                  <!-- Center - Navigation Menu -->
+                  <div class="lg:col-span-2 hidden md:flex lg:justify-center items-center">
+                        <ul class="flex text-white">
+                              <li class="mx-2 md:mx-3 lg:mx-4 hover:cursor-pointer hover:text-indigo-400 transition duration-200">
+                                    <a href="./index.html" class="flex items-center">
+                                          <img src="./img/home.svg" alt="home-icon" class="h-5 pr-1">
+                                          Home
+                                    </a>
+                              </li>
+                              <li class="mx-2 md:mx-3 lg:mx-4 hover:cursor-pointer hover:text-indigo-400 transition duration-200">
+                                    <a href="./index.html#gamemode" class="flex items-center">
+                                          <img src="./img/game.svg" alt="gamemode-icon" class="h-5 pr-1">
+                                          Gamemode
+                                    </a>
+                              </li>
+                              <li class="mx-2 md:mx-3 lg:mx-4 hover:cursor-pointer hover:text-indigo-400 transition duration-200">
+                                    <a href="./index.html#store" class="flex items-center">
+                                          <img src="./img/shop.svg" alt="store-icon" class="h-5 pr-1">
+                                          Store
+                                    </a>
+                              </li>
+                              <li class="mx-2 md:mx-3 lg:mx-4 hover:cursor-pointer hover:text-indigo-400 transition duration-200">
+                                    <a href="https://horizion.in/discord" target="_blank" class="flex items-center">
+                                          <img src="./img/discord.svg" alt="discord-icon" class="h-5 pr-1">
+                                          Discord
+                                    </a>
+                              </li>
+                              <li class="mx-2 md:mx-3 lg:mx-4 hover:cursor-pointer hover:text-indigo-400 transition duration-200">
+                                    <a href="./index.html#vote" class="flex items-center">
+                                          <img src="./img/vote.svg" alt="vote-icon" class="h-5 pr-1">
+                                          Vote
+                                    </a>
+                              </li>
+                        </ul>
+                  </div>
+
+                  <!-- Right - Play Button and Menu Icon -->
+                  <div class="flex items-center justify-end space-x-3">
+                        <!-- Shopping Cart - Hidden for now-->
+                        <div class="hidden mr-4 relative cursor-pointer cart-icon">
+                              <!-- Cart Icon -->
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white hover:text-indigo-400 transition duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                              </svg>
+                              <!-- Cart Item Count Badge -->
+                              <span class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                        </div>
+
+                        <!-- Play Button -->
+                        <button class="hidden ip font-mono bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-md font-semibold rounded-md px-4 py-2.5 shadow-lg hover:shadow-green-500/30 transition duration-300 ease-in-out transform hover:scale-105 md:flex items-center space-x-2 cursor-pointer">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                              </svg>
+                              <span>PLAY.HORIZION.IN</span>
+                        </button>
+                        
+                        <!-- Menu Icon for Mobile -->
+                        <img src="./img/menu.svg" alt="menu" class="menu-icon h-8 w-8 md:hidden cursor-pointer">
+                  </div>
             </div>
-
-            <div class="hidden sm:flex justify-center items-center">
-                  <ul class="flex text-white">
-                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer">
-                              <a href="./index.html" class="flex">
-                                    <img src="./img/home.svg" alt="home-icon" class="h-5 pr-1 mt-0.5">
-                                    Home
-                              </a>
-                        </li>
-                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer">
-                              <a href="./index.html#gamemode" class="flex">
-                                    <img src="./img/game.svg" alt="gamemode-icon" class="h-5 pr-1 mt-0.5">
-                                    Gamemode
-                              </a>
-                        </li>
-                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer">
-                              <a href="./index.html#store" class="flex">
-                                    <img src="./img/shop.svg" alt="store-icon" class="h-5 pr-1 mt-0.5">
-                                    Store
-                              </a>
-                        </li>
-                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer">
-                              <a href="https://horizion.in/discord" target="_blank" class="flex">
-                                    <img src="./img/discord.svg" alt="discord-icon" class="h-5 pr-1 mt-0.5">
-                                    Discord
-                              </a>
-                        </li>
-                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer">
-                              <a href="./index.html#vote" class="flex">
-                                    <img src="./img/vote.svg" alt="vote-icon" class="h-5 pr-1 mt-0.5">
-                                    Vote
-                              </a>
-                        </li>
-                  </ul>
-                  <button class="ip mx-2 md:mx-3 px-2 md:px-3 lg:px-4 p-1 border-2 border-green-600 text-white">PLAY.HORIZION.IN</button>
-            </div>
-
-            <!-- menu and close icon -->
-
-            <img src="./img/menu.svg" alt="menu" class="menu-icon h-8 w-8 sm:hidden mx-5">
-            
-      </header>  
+      </header>
       
       <main class="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 max-w-4xl relative">
 
+            <!-- Sidebar Overlay -->
+            <div class="sidebar-overlay fixed inset-0 bg-transparent z-40 transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+
             <!-- sidebar --> 
 
-            <div class="sidebar fixed sm:hidden pt-12 pb-2 w-[75%] xxs:w-[60%] xs:w-[50%] h-[100%] flex flex-col bg-gray-800 top-0 right-0 z-50 border border-gray-700 transition-transform duration-300 transform translate-x-full text-white">
-                  <div class="border-b-2 border-gray-700">
-
-                        <img src="./img/close.svg" alt="close" class=" absolute close-icon h-8 w-8 sm:hidden mx-5 top-2 right-0">
+            <div class="sidebar fixed md:hidden pt-12 pb-2 w-[75%] xxs:w-[60%] xs:w-[50%] h-[100%] flex flex-col bg-gray-800 top-0 right-0 z-50 border border-gray-700 transition-transform duration-300 transform translate-x-full text-white">
+                  <img src="./img/close.svg" alt="close" class="absolute close-icon h-10 w-10 top-4 right-4 cursor-pointer hover:bg-gray-600/50 rounded-lg p-1 transition duration-200">
+                  <div class="border-b-2 border-gray-700 pb-4 relative">
                   </div>        
-                  <ul class="sidebar-list">
-                        <li class="px-2 py-1 mx-3 my-3">
-                              <a href="./index.html" class="flex">
-                                    <img src="./img/home.svg" alt="home-icon" class="h-5 pr-1 mt-0.5">
+                  <ul class="sidebar-list px-4 mt-4">
+                        <li class="py-3 hover:bg-gray-700/50 rounded-lg transition duration-200">
+                              <a href="./index.html" class="flex items-center">
+                                    <img src="./img/home.svg" alt="home-icon" class="h-5 pr-3">
                                     Home
                               </a>
                         </li>
-                        <li class="px-2 py-1 mx-3 my-3">
-                              <a href="./index.html#gamemode" class="flex">
-                                    <img src="./img/game.svg" alt="gamemode-icon" class="h-5 pr-1 mt-0.5">
+                        <li class="py-3 hover:bg-gray-700/50 rounded-lg transition duration-200">
+                              <a href="./index.html#gamemode" class="flex items-center">
+                                    <img src="./img/game.svg" alt="gamemode-icon" class="h-5 pr-3">
                                     Gamemode
                               </a>
                         </li>
-                        <li class="px-2 py-1 mx-3 my-3">
-                              <a href="./index.html#store" class="flex">
-                                    <img src="./img/shop.svg" alt="store-icon" class="h-5 pr-1 mt-0.5">
+                        <li class="py-3 hover:bg-gray-700/50 rounded-lg transition duration-200">
+                              <a href="./index.html#store" class="flex items-center">
+                                    <img src="./img/shop.svg" alt="store-icon" class="h-5 pr-3">
                                     Store
                               </a>
                         </li>
-                        <li class="px-2 py-1 mx-3 my-3">
-                              <a href="https://horizion.in/discord" target="_blank" class="flex">
-                                    <img src="./img/discord.svg" alt="discord-icon" class="h-5 pr-1 mt-0.5">
+                        <li class="py-3 hover:bg-gray-700/50 rounded-lg transition duration-200">
+                              <a href="https://horizion.in/discord" target="_blank" class="flex items-center">
+                                    <img src="./img/discord.svg" alt="discord-icon" class="h-5 pr-3">
                                     Discord
                               </a>
                         </li>
-                        <li class="px-2 py-1 mx-3 my-3">
-                              <a href="./index.html#vote" class="flex">
-                                    <img src="./img/vote.svg" alt="vote-icon" class="h-5 pr-1 mt-0.5">
+                        <li class="py-3 hover:bg-gray-700/50 rounded-lg transition duration-200">
+                              <a href="./index.html#vote" class="flex items-center">
+                                    <img src="./img/vote.svg" alt="vote-icon" class="h-5 pr-3">
                                     Vote
                               </a>
                         </li>
+                        <!-- Hidden Cart option for future use -->
+                        <li class="py-3 hover:bg-gray-700/50 rounded-lg transition duration-200 hidden">
+                              <a href="#" class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 pr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                    Cart
+                              </a>
+                        </li>
                   </ul>
-
+                  
+                  <div class="mt-auto mx-4 mb-6">
+                        <button class="w-full font-mono bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-md font-semibold rounded-md px-4 py-2.5 shadow-lg hover:shadow-green-500/30 transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-2">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                              </svg>
+                              <span>PLAY.HORIZION.IN</span>
+                        </button>
+                  </div>
             </div>
 
             <!-- Refund Policy  -->
@@ -137,11 +177,14 @@
                   <!-- Top section with IP and links -->
                   <div class="flex flex-col md:flex-row justify-between items-center mb-6">
                         <!-- Server IP (Left side on desktop) -->
-                        <div class="flex items-center mb-4 md:mb-0">
-                              <div class="font-mono text-green-500 text-lg font-bold border border-green-500 rounded-md px-4 py-2 bg-gray-900/50">
-                                    PLAY.HORIZION.IN
-                              </div>
-                        </div>
+                        <div class="ip mt-auto mx-4 mb-4 md:mb-0">
+                        <button class="w-full font-mono bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-md font-semibold rounded-md px-4 py-2.5 shadow-lg hover:shadow-green-500/30 transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-2">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                              </svg>
+                              <span>PLAY.HORIZION.IN</span>
+                        </button>
+                  </div>
                         
                         <!-- Navigation links (Right side on desktop) -->
                         <div class="flex flex-wrap justify-center">

@@ -89,7 +89,7 @@ app.post('/get-service-data', (req, res) => {
             serviceData = { 
                 service_name : "VIPRank",
                 description: "Detailed description for Service 101929309390", 
-                price: 89900, // Price in paisa (₹89)
+                price: 8900, // Price in paisa (₹89)
                 service_id: 1, 
             };
             break;
@@ -109,13 +109,44 @@ app.post('/get-service-data', (req, res) => {
                 service_id: 3, 
             };
             break;
-
         case 'ImmortalRank':
             serviceData = { 
                 service_name : "ImmortalRank",
                 description: "Detailed description for Service 4", 
                 price: 39900, // Price in paisa (₹399)
                 service_id: 4, 
+            };
+            break;
+        case 'VoidKey':
+            serviceData = { 
+                service_name : "VoidKey",
+                description: "Detailed description for Service 5", 
+                price: 1900, // Price in paisa (₹19)
+                service_id: 5, 
+            };
+            break;
+        case 'CelestialKey':
+            serviceData = { 
+                service_name : "CelestialKey",
+                description: "Detailed description for Service 6", 
+                price: 3900, // Price in paisa (₹39)
+                service_id: 6, 
+            };
+            break;
+        case 'EternalKey':
+            serviceData = { 
+                service_name : "EternalKey",
+                description: "Detailed description for Service 6", 
+                price: 6900, // Price in paisa (₹69)
+                service_id: 7, 
+            };
+            break;
+        case 'OmegaKey':
+            serviceData = { 
+                service_name : "OmegaKey",
+                description: "Detailed description for Service 6", 
+                price: 7900, // Price in paisa (₹79)
+                service_id: 8, 
             };
             break;
 
@@ -126,11 +157,6 @@ app.post('/get-service-data', (req, res) => {
 
     res.json(serviceData); // Send service data securely
 });
-
-
-
-
-
 
 // (Optional) Razorpay Webhook endpoint for automated events
 app.post("/webhook", express.raw({ type: 'application/json' }), (req, res) => {

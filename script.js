@@ -1,23 +1,18 @@
 let sidebar = document.querySelector(".sidebar");
+let sidebarOverlay = document.querySelector(".sidebar-overlay");
 let menuIcon = document.querySelector(".menu-icon");
 let closeIcon = document.querySelector(".close-icon");
 let ip = document.querySelectorAll(".ip");
-let ping = document.querySelector(".ping");
 let statusOnline = document.querySelector("#status-online");
 let statusOffline = document.querySelector("#status-offline");
 let playerCount = document.querySelector(".player-count")
-let body = document.querySelector(".body")
 let sidebarList = document.querySelectorAll(".sidebar-list")
 
 const api = "https://api.mcstatus.io/v2/status/java/play.horizion.in:25565"
 
-
-let menuHidden = false;
-
 window.onload = () => {
       // Start with sidebar hidden (translated off-screen)
       sidebar.classList.add('translate-x-full');
-      menuHidden = false;
       
       // Store page - Tab switching and payment
       if (document.getElementById('tab-ranks')) {
@@ -91,32 +86,51 @@ menuIcon.onclick = () => {
       // Slide sidebar in from right
       sidebar.classList.remove('translate-x-full');
       sidebar.classList.add('translate-x-0');
-
-      // body.style.position = "relative";
+      
+      // Show overlay and block all interactions
+      sidebarOverlay.classList.remove('opacity-0', 'pointer-events-none');
+      sidebarOverlay.classList.add('opacity-100', 'pointer-events-auto');
+      
+      // Prevent body scrolling when sidebar is open
+      document.body.style.overflow = 'hidden';
       
       closeIcon.style.removeProperty('display');
-      menuIcon.style.removeProperty('display');
-      menuIcon.style.display = "none";
 };
 
 closeIcon.onclick = () => {
+      closeSidebar();
+};
+
+// Function to close sidebar
+function closeSidebar() {
       // Slide sidebar out to right
       sidebar.classList.remove('translate-x-0');
       sidebar.classList.add('translate-x-full');
       
-      menuIcon.style.removeProperty('display');
+      // Hide overlay and restore interactions
+      sidebarOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+      sidebarOverlay.classList.add('opacity-0', 'pointer-events-none');
+      
+      // Restore body scrolling
+      document.body.style.overflow = '';
+      
       closeIcon.style.removeProperty('display');
       closeIcon.style.display = "none";
+}
+
+// Close sidebar when clicking on overlay
+sidebarOverlay.onclick = () => {
+      closeSidebar();
+};
+
+// Prevent sidebar clicks from closing the sidebar
+sidebar.onclick = (e) => {
+      e.stopPropagation();
 };
 
 sidebarList.forEach((click) => {
       click.addEventListener("click", () => {
-            sidebar.classList.remove('translate-x-0');
-            sidebar.classList.add('translate-x-full');
-
-            menuIcon.style.removeProperty('display');
-            closeIcon.style.removeProperty('display');
-            closeIcon.style.display = "none";
+            closeSidebar();
       });
       
 });
