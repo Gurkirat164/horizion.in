@@ -53,51 +53,58 @@
 
       <!-- navbar -->
 
-      <header class="flex justify-between bg-gray-800 items-center fixed w-full z-50">
+      <header class="flex justify-between bg-gray-800 items-center fixed w-full z-50 px-4 py-2 shadow-lg">
             <div class="flex items-center">
-                  <img src="./img/favicon.png" alt="logo" class="logo max-h-16 max-w-16 px-2">
-                  <!-- <div class="font-bold text-xl text-[#2fa101]">Horizion Network</div> -->
+                  <img src="./img/favicon.png" alt="logo" class="logo h-12 w-12">
             </div>
 
-            <div class="hidden sm:flex justify-center items-center">
+            <div class="hidden md:flex justify-center items-center flex-1 ml-8">
                   <ul class="flex text-white">
-                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer">
-                              <a href="./index.html" class="flex">
-                                    <img src="./img/home.svg" alt="home-icon" class="h-5 pr-1 mt-0.5">
+                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer hover:text-indigo-400 transition duration-200">
+                              <a href="./index.html" class="flex items-center">
+                                    <img src="./img/home.svg" alt="home-icon" class="h-5 pr-1">
                                     Home
                               </a>
                         </li>
-                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer">
-                              <a href="./index.html#gamemode" class="flex">
-                                    <img src="./img/game.svg" alt="gamemode-icon" class="h-5 pr-1 mt-0.5">
+                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer hover:text-indigo-400 transition duration-200">
+                              <a href="./index.html#gamemode" class="flex items-center">
+                                    <img src="./img/game.svg" alt="gamemode-icon" class="h-5 pr-1">
                                     Gamemode
                               </a>
                         </li>
-                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer">
-                              <a href="./index.html#store" class="flex">
-                                    <img src="./img/shop.svg" alt="store-icon" class="h-5 pr-1 mt-0.5">
+                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer hover:text-indigo-400 transition duration-200">
+                              <a href="./index.html#store" class="flex items-center">
+                                    <img src="./img/shop.svg" alt="store-icon" class="h-5 pr-1">
                                     Store
                               </a>
                         </li>
-                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer">
-                              <a href="https://horizion.in/discord" target="_blank" class="flex">
-                                    <img src="./img/discord.svg" alt="discord-icon" class="h-5 pr-1 mt-0.5">
+                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer hover:text-indigo-400 transition duration-200">
+                              <a href="https://horizion.in/discord" target="_blank" class="flex items-center">
+                                    <img src="./img/discord.svg" alt="discord-icon" class="h-5 pr-1">
                                     Discord
                               </a>
                         </li>
-                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer">
-                              <a href="./index.html#vote" class="flex">
-                                    <img src="./img/vote.svg" alt="vote-icon" class="h-5 pr-1 mt-0.5">
+                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer hover:text-indigo-400 transition duration-200">
+                              <a href="./index.html#vote" class="flex items-center">
+                                    <img src="./img/vote.svg" alt="vote-icon" class="h-5 pr-1">
                                     Vote
                               </a>
                         </li>
                   </ul>
-                  <button class="ip mx-2 md:mx-3 px-2 md:px-3 lg:px-4 p-1 border-2 border-green-600 text-white">PLAY.HORIZION.IN</button>
             </div>
 
-            <!-- menu and close icon -->
+            <div class="flex items-center">
 
-            <img src="./img/menu.svg" alt="menu" class="menu-icon h-8 w-8 sm:hidden mx-5">
+                  <!-- Play Button -->
+                  <button class="ip font-mono bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-md font-semibold rounded-md px-4 py-2.5 shadow-lg hover:shadow-green-500/30 transition duration-300 ease-in-out transform hover:scale-105 md:flex items-center space-x-2 cursor-pointer hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                        </svg>
+                        <span>PLAY.HORIZION.IN</span>
+                  </button>
+                  
+                  <!-- Menu Icon for Mobile -->
+                  <img src="./img/menu.svg" alt="menu" class="menu-icon h-8 w-8 md:hidden cursor-pointer">
             
       </header>
       
@@ -151,7 +158,10 @@
                   <img src="./img/hz.png" alt="hz" class="h-20 sm:h-28 max-sm:h-14 hover:scale-110  tranistion ease-in-out duration-300"></img>
                   
                   <div class="flex my-8 items-center">
-                        <button class="ip bg-white/30 flex items-center rounded-sm border border-green-500 py-2 px-6 text-center align-middle text-xl font-bold text-black transition-all hover:opacity-75 focus:ring focus:ring-green-200 active:opacity-[0.85]" type="button">Join Now</button>
+                        <button class="ip bg-white/30 flex items-center rounded-sm border border-green-500 py-2 px-6 text-center align-middle text-xl font-bold text-black transition-all hover:opacity-75 focus:ring focus:ring-green-200 active:opacity-[0.85] relative group" type="button">
+                          Join Now
+                          <span class="tooltip absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-black text-xs text-white rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">Copy server IP</span>
+                        </button>
                         
                         <!-- status icons -->
                         
@@ -562,7 +572,7 @@
                   </div>
             </div>
 
-      </sec>
+      </section>
 
             <!-- Vote Links -->
 

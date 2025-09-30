@@ -30,7 +30,7 @@ const razorpay = new Razorpay({
 
 app.post("/create-order", async (req, res) => {
   try {
-    const amount = parseInt(req.body.amount * 100); // Convert to paise
+    const amount = parseInt(req.body.amount);
     const order = await razorpay.orders.create({
       amount: amount,
       currency: "INR",

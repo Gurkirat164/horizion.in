@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Horizion Network | Store</title>
+      <link rel="stylesheet" href="src/output.css">
+</head>
+<body class="bg-gray-900">
+
+      
+      <!-- navbar -->
+
+      <header class="flex justify-between bg-gray-800 items-center fixed w-full z-50 px-4 py-2 shadow-lg">
+            <div class="flex items-center">
+                  <img src="./img/favicon.png" alt="logo" class="logo h-12 w-12">
+            </div>
+
+            <div class="hidden md:flex justify-center items-center flex-1 ml-8">
+                  <ul class="flex text-white">
+                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer hover:text-indigo-400 transition duration-200">
+                              <a href="./index.html" class="flex items-center">
+                                    <img src="./img/home.svg" alt="home-icon" class="h-5 pr-1">
+                                    Home
+                              </a>
+                        </li>
+                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer hover:text-indigo-400 transition duration-200">
+                              <a href="./index.html#gamemode" class="flex items-center">
+                                    <img src="./img/game.svg" alt="gamemode-icon" class="h-5 pr-1">
+                                    Gamemode
+                              </a>
+                        </li>
+                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer hover:text-indigo-400 transition duration-200">
+                              <a href="./index.html#store" class="flex items-center">
+                                    <img src="./img/shop.svg" alt="store-icon" class="h-5 pr-1">
+                                    Store
+                              </a>
+                        </li>
+                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer hover:text-indigo-400 transition duration-200">
+                              <a href="https://horizion.in/discord" target="_blank" class="flex items-center">
+                                    <img src="./img/discord.svg" alt="discord-icon" class="h-5 pr-1">
+                                    Discord
+                              </a>
+                        </li>
+                        <li class="mx-2 md:mx-3 lg:mx-6 hover:cursor-pointer hover:text-indigo-400 transition duration-200">
+                              <a href="./index.html#vote" class="flex items-center">
+                                    <img src="./img/vote.svg" alt="vote-icon" class="h-5 pr-1">
+                                    Vote
+                              </a>
+                        </li>
+                  </ul>
+            </div>
+
+            <div class="flex items-center">
+                  <!-- Shopping Cart - Hidden for now-->
+                  <div class="hidden mr-4 relative cursor-pointer cart-icon">
+                        <!-- Cart Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white hover:text-indigo-400 transition duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <!-- Cart Item Count Badge -->
+                        <span class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                  </div>
+
+                  <!-- Play Button -->
+                  <button class="ip font-mono bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-md font-semibold rounded-md px-4 py-2.5 shadow-lg hover:shadow-green-500/30 transition duration-300 ease-in-out transform hover:scale-105 flex items-center space-x-2 cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                        </svg>
+                        <span>PLAY.HORIZION.IN</span>
+                  </button>
+                  
+                  <!-- Menu Icon for Mobile -->
+                  <img src="./img/menu.svg" alt="menu" class="menu-icon h-8 w-8 md:hidden cursor-pointer">
+            
+      </header>
+
+      <main class = "relative">
+
+            <!-- sidebar --> 
+
+            <div class="sidebar fixed md:hidden pt-12 pb-2 w-[75%] xxs:w-[60%] xs:w-[50%] h-[100%] flex flex-col bg-gray-800 top-0 right-0 z-50 border border-gray-700 transition-transform duration-300 transform translate-x-full text-white">
+                  <div class="border-b-2 border-gray-700 pb-4 relative">
+                        <img src="./img/close.svg" alt="close" class="absolute close-icon h-8 w-8 top-4 right-4 cursor-pointer">
+                        <div class="flex items-center justify-center mt-6 mb-2">
+                              <img src="./img/favicon.png" alt="logo" class="h-10 w-10">
+                              <span class="ml-2 font-bold text-lg">Horizion Network</span>
+                        </div>
+                  </div>        
+                  <ul class="sidebar-list px-4 mt-4">
+                        <li class="py-3 hover:bg-gray-700/50 rounded-lg transition duration-200">
+                              <a href="./index.html" class="flex items-center">
+                                    <img src="./img/home.svg" alt="home-icon" class="h-5 pr-3">
+                                    Home
+                              </a>
+                        </li>
+                        <li class="py-3 hover:bg-gray-700/50 rounded-lg transition duration-200">
+                              <a href="./index.html#gamemode" class="flex items-center">
+                                    <img src="./img/game.svg" alt="gamemode-icon" class="h-5 pr-3">
+                                    Gamemode
+                              </a>
+                        </li>
+                        <li class="py-3 hover:bg-gray-700/50 rounded-lg transition duration-200">
+                              <a href="./index.html#store" class="flex items-center">
+                                    <img src="./img/shop.svg" alt="store-icon" class="h-5 pr-3">
+                                    Store
+                              </a>
+                        </li>
+                        <li class="py-3 hover:bg-gray-700/50 rounded-lg transition duration-200">
+                              <a href="https://horizion.in/discord" target="_blank" class="flex items-center">
+                                    <img src="./img/discord.svg" alt="discord-icon" class="h-5 pr-3">
+                                    Discord
+                              </a>
+                        </li>
+                        <li class="py-3 hover:bg-gray-700/50 rounded-lg transition duration-200">
+                              <a href="./index.html#vote" class="flex items-center">
+                                    <img src="./img/vote.svg" alt="vote-icon" class="h-5 pr-3">
+                                    Vote
+                              </a>
+                        </li>
+                        <!-- Hidden Cart option for future use -->
+                        <li class="py-3 hover:bg-gray-700/50 rounded-lg transition duration-200 hidden">
+                              <a href="#" class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 pr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                    Cart
+                              </a>
+                        </li>
+                  </ul>
+                  
+                  <div class="mt-auto mx-4 mb-6">
+                        <button class="w-full font-mono bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-md font-semibold rounded-md px-4 py-2.5 shadow-lg hover:shadow-green-500/30 transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-2">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                              </svg>
+                              <span>PLAY.HORIZION.IN</span>
+                        </button>
+                  </div>
+            </div>
+
+            <!-- Main Store  -->
+
+            <section class="pt-20 pb-20" id="store">
+                  <div class="max-w-6xl max-lg:max-w-3xl mx-auto px-4">
+
+                        <div class="relative text-center mb-16">
+                              <div class="absolute inset-0 flex items-center justify-center opacity-10">
+                                    <div class="w-64 h-64 bg-indigo-600 rounded-full filter blur-3xl"></div>
+                              </div>
+                              <h2 class="text-white text-4xl font-bold mb-3 relative">Server Store</h2>
+                              <p class="text-indigo-300 text-lg max-w-lg mx-auto">Choose the perfect rank to enhance your gameplay experience on Horizion Network</p>
+                              <div class="flex justify-center mt-6">
+                                    <div class="h-1 w-24 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full"></div>
+                              </div>
+                        </div>
+
+                        <!-- Store Tabs -->
+                        <div class="flex justify-center mb-8 overflow-x-auto pb-2 hide-scrollbar">
+                              <div class="flex bg-gray-900 p-1 rounded-lg shadow-lg">
+                                    <button id="tab-ranks" class="px-5 py-2 rounded-md bg-indigo-600 text-white font-medium text-sm">Ranks</button>
+                                    <button id="tab-crate-keys" class="px-5 py-2 rounded-md text-gray-300 hover:text-white font-medium text-sm transition">Crate Keys</button>
+                              </div>
+                        </div>
+
+                        <!-- Ranks and Crate Keys Sections -->
+                        
+                        <!-- Ranks Section -->
+                        <div id="ranks-section" class="grid lg:grid-cols-4 sm:grid-cols-2 gap-8 mt-8 max-sm:max-w-sm max-sm:mx-auto">
+                              <!-- Script to load Razorpay -->
+                              <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+                              <!-- VIP Rank -->
+
+                              <div class="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl shadow-xl overflow-hidden hover:shadow-indigo-500/20 transition duration-300 ease-in-out transform hover:scale-[1.02] flex flex-col">
+                                    <!-- Card Header -->
+                                    <div class="relative p-5 border-b border-gray-700">
+                                          <div class="flex justify-between items-start">
+                                                <div>
+                                                      <h3 class="text-white text-xl font-bold">VIP Rank</h3>
+                                                      <div class="bg-gray-700/50 px-2 py-1 text-xs font-medium text-indigo-300 rounded-md inline-block mt-1">30 days</div>
+                                                </div>
+                                                <div class="bg-gray-700/30 p-2 rounded-lg">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                                      </svg>
+                                                </div>
+                                          </div>
+                                          <div class="mt-4">
+                                                <h3 class="text-white text-3xl font-bold">₹89 <span class="text-gray-400 text-sm font-normal">/ 30 days</span></h3>
+                                          </div>
+                                    </div>
+
+                                    <!-- Card Body -->
+                                    <div class="p-5 space-y-6">
+                                          <div>
+                                                <h4 class="text-white text-md font-bold flex items-center mb-3">
+                                                      <span class="w-6 h-6 flex items-center justify-center bg-indigo-600/20 rounded-md mr-2">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
+                                                                  <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                                            </svg>
+                                                      </span>
+                                                      Perks
+                                                </h4>
+                                                <ul class="space-y-2">
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            2 Ah Limit
+                                                      </li>
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            2 Jobs Limit
+                                                      </li>
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            2 Set Home
+                                                      </li>
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            15 Chest Shop
+                                                      </li>
+                                                </ul>
+                                          </div>
+
+                                          <div>
+                                                <h4 class="text-white text-md font-bold flex items-center mb-3">
+                                                      <span class="w-6 h-6 flex items-center justify-center bg-indigo-600/20 rounded-md mr-2">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
+                                                                  <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                                            </svg>
+                                                      </span>
+                                                      Commands
+                                                </h4>
+                                                <ul class="space-y-2">
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            /chatcolor
+                                                      </li>
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            /nick
+                                                      </li>
+                                                </ul>
+                                          </div>
+
+                                          <div>
+                                                <h4 class="text-white text-md font-bold flex items-center mb-3">
+                                                      <span class="w-6 h-6 flex items-center justify-center bg-indigo-600/20 rounded-md mr-2">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
+                                                                  <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
+                                                            </svg>
+                                                      </span>
+                                                      Bonus
+                                                </h4>
+                                                <ul class="space-y-2">
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            2.5k Claim Blocks
+                                                      </li>
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            VIP Kit (Cooldown 7 Days)
+                                                      </li>
+                                                </ul>
+                                          </div>
+                                    </div>
+                                    
+                                    <!-- Card Footer -->
+                                    <div class="p-5 border-t border-gray-700 mt-auto">
+                                          <button id="buy-vip-rank" type="button" data-amount="8900" data-name="VIP Rank" class="w-full py-3 px-4 bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 rounded-lg text-white font-semibold shadow-lg hover:shadow-indigo-500/30 transition duration-300 flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                                      <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                                </svg>
+                                                Buy VIP Rank
+                                          </button>
+                                    </div>
+                              </div>
+
+                              <!-- MVP Rank  -->
+
+                              <div class="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl shadow-xl overflow-hidden hover:shadow-indigo-500/20 transition duration-300 ease-in-out transform hover:scale-[1.02] relative flex flex-col">
+                                    <!-- Best Deal Badge -->
+                                    <div class="absolute -top-1 -right-1 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xs font-bold py-1 px-3 rounded-bl-lg rounded-tr-lg shadow-lg z-10">
+                                          BEST DEAL
+                                    </div>
+                                    
+                                    <!-- Card Header -->
+                                    <div class="relative p-5 border-b border-gray-700 bg-gradient-to-r from-indigo-900/20 to-purple-900/20">
+                                          <div class="flex justify-between items-start">
+                                                <div>
+                                                      <h3 class="text-white text-xl font-bold">MVP Rank</h3>
+                                                      <div class="bg-gray-700/50 px-2 py-1 text-xs font-medium text-indigo-300 rounded-md inline-block mt-1">30 days</div>
+                                                </div>
+                                                <div class="bg-indigo-600/30 p-2 rounded-lg">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                                                      </svg>
+                                                </div>
+                                          </div>
+                                          <div class="mt-4">
+                                                <h3 class="text-white text-3xl font-bold">₹169 <span class="text-gray-400 text-sm font-normal">/ 30 days</span></h3>
+                                          </div>
+                                    </div>
+
+                                    <!-- Card Body -->
+                                    <div class="p-5 space-y-6">
+                                          <div>
+                                                <h4 class="text-white text-md font-bold flex items-center mb-3">
+                                                      <span class="w-6 h-6 flex items-center justify-center bg-indigo-600/20 rounded-md mr-2">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
+                                                                  <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                                            </svg>
+                                                      </span>
+                                                      Perks
+                                                </h4>
+                                                <ul class="space-y-2">
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            3 Ah Limit
+                                                      </li>
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            2 Jobs Limit
+                                                      </li>
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            3 Set Home
+                                                      </li>
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            20 Chest Shop
+                                                      </li>
+                                                </ul>
+                                          </div>
+
+                                          <div>
+                                                <h4 class="text-white text-md font-bold flex items-center mb-3">
+                                                      <span class="w-6 h-6 flex items-center justify-center bg-indigo-600/20 rounded-md mr-2">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
+                                                                  <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                                            </svg>
+                                                      </span>
+                                                      Commands
+                                                </h4>
+                                                <div class="grid grid-cols-2 gap-2">
+                                                      <ul class="space-y-2">
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /chatcolor
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /nick
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /sit
+                                                            </li>
+                                                      </ul>
+                                                      <ul class="space-y-2">
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /enderchest
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /craft
+                                                            </li>
+                                                      </ul>
+                                                </div>
+                                          </div>
+
+                                          <div>
+                                                <h4 class="text-white text-md font-bold flex items-center mb-3">
+                                                      <span class="w-6 h-6 flex items-center justify-center bg-indigo-600/20 rounded-md mr-2">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
+                                                                  <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
+                                                            </svg>
+                                                      </span>
+                                                      Bonus
+                                                </h4>
+                                                <ul class="space-y-2">
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            5k Claim Blocks
+                                                      </li>
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            MVP Kit (Cooldown 7 Days)
+                                                      </li>
+                                                </ul>
+                                          </div>
+                                    </div>
+                                    
+                                    <!-- Card Footer -->
+                                    <div class="p-5 border-t border-gray-700 bg-gradient-to-r from-indigo-900/10 to-purple-900/10 mt-auto">
+                                          <button id="buy-mvp-rank" type="button" data-amount="16900" data-name="MVP Rank" class="w-full py-3 px-4 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-400 hover:to-purple-500 rounded-lg text-white font-semibold shadow-lg hover:shadow-indigo-500/30 transition duration-300 flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                                      <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                                </svg>
+                                                Buy MVP Rank
+                                          </button>
+                                    </div>
+                              </div>
+
+                              <!-- Elite Rank  -->
+
+                              <div class="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl shadow-xl overflow-hidden hover:shadow-indigo-500/20 transition duration-300 ease-in-out transform hover:scale-[1.02] relative flex flex-col">
+                                    <!-- Most Popular Badge -->
+                                    <div class="absolute -top-1 -right-1 bg-gradient-to-r from-green-500 to-teal-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg rounded-tr-lg shadow-lg z-10">
+                                          MOST POPULAR
+                                    </div>
+                                    
+                                    <!-- Card Header -->
+                                    <div class="relative p-5 border-b border-gray-700 bg-gradient-to-r from-green-900/20 to-teal-900/20">
+                                          <div class="flex justify-between items-start">
+                                                <div>
+                                                      <h3 class="text-white text-xl font-bold">Elite Rank</h3>
+                                                      <div class="bg-gray-700/50 px-2 py-1 text-xs font-medium text-teal-300 rounded-md inline-block mt-1">30 days</div>
+                                                </div>
+                                                <div class="bg-teal-600/30 p-2 rounded-lg">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                                                      </svg>
+                                                </div>
+                                          </div>
+                                          <div class="mt-4">
+                                                <h3 class="text-white text-3xl font-bold">₹279 <span class="text-gray-400 text-sm font-normal">/ 30 days</span></h3>
+                                          </div>
+                                    </div>
+
+                                    <!-- Card Body -->
+                                    <div class="p-5 space-y-6">
+                                          <div>
+                                                <h4 class="text-white text-md font-bold flex items-center mb-3">
+                                                      <span class="w-6 h-6 flex items-center justify-center bg-teal-600/20 rounded-md mr-2">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-400" viewBox="0 0 20 20" fill="currentColor">
+                                                                  <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                                            </svg>
+                                                      </span>
+                                                      Perks
+                                                </h4>
+                                                <ul class="space-y-2">
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            4 Ah Limit
+                                                      </li>
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            3 Jobs Limit
+                                                      </li>
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            4 Set Home
+                                                      </li>
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            25 Chest Shop
+                                                      </li>
+                                                </ul>
+                                          </div>
+
+                                          <div>
+                                                <h4 class="text-white text-md font-bold flex items-center mb-3">
+                                                      <span class="w-6 h-6 flex items-center justify-center bg-teal-600/20 rounded-md mr-2">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-400" viewBox="0 0 20 20" fill="currentColor">
+                                                                  <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                                            </svg>
+                                                      </span>
+                                                      Commands
+                                                </h4>
+                                                <div class="grid grid-cols-2 gap-2">
+                                                      <ul class="space-y-2">
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /chatcolor
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /nick
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /sit
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /enderchest
+                                                            </li>
+                                                      </ul>
+                                                      <ul class="space-y-2">
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /craft
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /feed
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /anvil
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /spin
+                                                            </li>
+                                                      </ul>
+                                                </div>
+                                          </div>
+
+                                          <div>
+                                                <h4 class="text-white text-md font-bold flex items-center mb-3">
+                                                      <span class="w-6 h-6 flex items-center justify-center bg-teal-600/20 rounded-md mr-2">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-400" viewBox="0 0 20 20" fill="currentColor">
+                                                                  <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
+                                                            </svg>
+                                                      </span>
+                                                      Bonus
+                                                </h4>
+                                                <ul class="space-y-2">
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            7.5k Claim Blocks
+                                                      </li>
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            Elite Kit (Cooldown 7 Days)
+                                                      </li>
+                                                </ul>
+                                          </div>
+                                    </div>
+                                    
+                                    <!-- Card Footer -->
+                                    <div class="p-5 border-t border-gray-700 bg-gradient-to-r from-green-900/10 to-teal-900/10 mt-auto">
+                                          <button id="buy-elite-rank" type="button" data-amount="27900" data-name="Elite Rank" class="w-full py-3 px-4 bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-400 hover:to-teal-400 rounded-lg text-white font-semibold shadow-lg hover:shadow-teal-500/30 transition duration-300 flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                                      <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                                </svg>
+                                                Buy Elite Rank
+                                          </button>
+                                    </div>
+                              </div>
+
+                              <!-- Immortal Rank  -->
+
+                              <div class="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl shadow-xl overflow-hidden hover:shadow-indigo-500/20 transition duration-300 ease-in-out transform hover:scale-[1.02] relative flex flex-col">
+                                    <!-- Premium Badge -->
+                                    <div class="absolute -top-1 -right-1 bg-gradient-to-r from-amber-500 to-red-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg rounded-tr-lg shadow-lg z-10">
+                                          PREMIUM
+                                    </div>
+                                    
+                                    <!-- Card Header -->
+                                    <div class="relative p-5 border-b border-gray-700 bg-gradient-to-r from-amber-900/20 to-red-900/20">
+                                          <div class="flex justify-between items-start">
+                                                <div>
+                                                      <h3 class="text-white text-xl font-bold">Immortal Rank</h3>
+                                                      <div class="bg-gray-700/50 px-2 py-1 text-xs font-medium text-amber-300 rounded-md inline-block mt-1">30 days</div>
+                                                </div>
+                                                <div class="bg-amber-600/30 p-2 rounded-lg">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                                      </svg>
+                                                </div>
+                                          </div>
+                                          <div class="mt-4">
+                                                <h3 class="text-white text-3xl font-bold">₹399 <span class="text-gray-400 text-sm font-normal">/ 30 days</span></h3>
+                                          </div>
+                                    </div>
+
+                                    <!-- Card Body -->
+                                    <div class="p-5 space-y-6">
+                                          <div>
+                                                <h4 class="text-white text-md font-bold flex items-center mb-3">
+                                                      <span class="w-6 h-6 flex items-center justify-center bg-amber-600/20 rounded-md mr-2">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
+                                                                  <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                                            </svg>
+                                                      </span>
+                                                      Perks
+                                                </h4>
+                                                <ul class="space-y-2">
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            4 Ah Limit
+                                                      </li>
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            3 Jobs Limit
+                                                      </li>
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            6 Set Home
+                                                      </li>
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            30 Chest Shop
+                                                      </li>
+                                                </ul>
+                                          </div>
+
+                                          <div>
+                                                <h4 class="text-white text-md font-bold flex items-center mb-3">
+                                                      <span class="w-6 h-6 flex items-center justify-center bg-amber-600/20 rounded-md mr-2">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
+                                                                  <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                                            </svg>
+                                                      </span>
+                                                      Commands
+                                                </h4>
+                                                <div class="grid grid-cols-2 gap-2">
+                                                      <ul class="space-y-2">
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /chatcolor
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /nick
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /sit
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /enderchest
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /craft
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /feed
+                                                            </li>
+                                                      </ul>
+                                                      <ul class="space-y-2">
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /anvil
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /hat
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /lay
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /crawl
+                                                            </li>
+                                                            <li class="flex items-center text-sm text-gray-300">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                  </svg>
+                                                                  /spin
+                                                            </li>
+                                                      </ul>
+                                                </div>
+                                          </div>
+
+                                          <div>
+                                                <h4 class="text-white text-md font-bold flex items-center mb-3">
+                                                      <span class="w-6 h-6 flex items-center justify-center bg-amber-600/20 rounded-md mr-2">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
+                                                                  <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
+                                                            </svg>
+                                                      </span>
+                                                      Bonus
+                                                </h4>
+                                                <ul class="space-y-2">
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            10k Claim Blocks
+                                                      </li>
+                                                      <li class="flex items-center text-sm text-gray-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            Immortal Kit (Cooldown 7 Days)
+                                                      </li>
+                                                </ul>
+                                          </div>
+                                    </div>
+                                    
+                                    <!-- Card Footer -->
+                                    <div class="p-5 border-t border-gray-700 bg-gradient-to-r from-amber-900/10 to-red-900/10 mt-auto">
+                                          <button id="buy-immortal-rank" type="button" data-amount="39900" data-name="Immortal Rank" class="w-full py-3 px-4 bg-gradient-to-r from-amber-500 to-red-500 hover:from-amber-400 hover:to-red-400 rounded-lg text-white font-semibold shadow-lg hover:shadow-amber-500/30 transition duration-300 flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                                      <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                                </svg>
+                                                Buy Immortal Rank
+                                          </button>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <!-- Crate Keys Section (Initially Hidden) -->
+                        <div id="crate-keys-section" class="lg:grid-cols-4 sm:grid-cols-2 gap-8 mt-8 max-sm:max-w-sm max-sm:mx-auto hidden">
+                              
+                              <!-- Void Crate Key -->
+                              <div class="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl shadow-xl overflow-hidden hover:shadow-purple-500/20 transition duration-300 ease-in-out transform hover:scale-[1.02] flex flex-col">
+                                    <!-- Card Header -->
+                                    <div class="relative p-5 border-b border-gray-700">
+                                          <div class="flex justify-between items-start">
+                                                <div>
+                                                      <h3 class="text-white text-xl font-bold">Void Crate Key</h3>
+                                                </div>
+                                                <div class="bg-gray-700/30 p-2 rounded-lg">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                                                      </svg>
+                                                </div>
+                                          </div>
+                                          <div class="mt-4">
+                                                <h3 class="text-white text-3xl font-bold">₹19</h3>
+                                          </div>
+                                    </div>
+
+                                    <!-- Card Body -->
+                                    <div class="p-5 flex-grow">
+                                          <div class="flex items-center justify-center h-32 my-4">
+                                                <div class="w-24 h-24 relative">
+                                                      <div class="absolute inset-0 bg-purple-500/20 rounded-lg"></div>
+                                                      <div class="absolute inset-0 flex items-center justify-center">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-purple-400" viewBox="0 0 20 20" fill="currentColor">
+                                                                  <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                                            </svg>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <p class="text-center text-gray-400 mt-2">Unlock special items with the Void Crate Key!</p>
+                                    </div>
+                                    
+                                    <!-- Card Footer -->
+                                    <div class="p-5 border-t border-gray-700 mt-auto">
+                                          <button id="buy-void-key" type="button" data-amount="1900" data-name="Void Crate Key" class="w-full py-3 px-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 rounded-lg text-white font-semibold shadow-lg hover:shadow-purple-500/30 transition duration-300 flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                                      <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                                </svg>
+                                                Buy Void Key
+                                          </button>
+                                    </div>
+                              </div>
+
+                              <!-- Celestial Crate Key -->
+                              <div class="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl shadow-xl overflow-hidden hover:shadow-blue-500/20 transition duration-300 ease-in-out transform hover:scale-[1.02] flex flex-col">
+                                    <!-- Card Header -->
+                                    <div class="relative p-5 border-b border-gray-700 bg-gradient-to-r from-blue-900/20 to-cyan-900/20">
+                                          <div class="flex justify-between items-start">
+                                                <div>
+                                                      <h3 class="text-white text-xl font-bold">Celestial Crate Key</h3>
+                                                </div>
+                                                <div class="bg-blue-600/30 p-2 rounded-lg">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                                                      </svg>
+                                                </div>
+                                          </div>
+                                          <div class="mt-4">
+                                                <h3 class="text-white text-3xl font-bold">₹39</h3>
+                                          </div>
+                                    </div>
+
+                                    <!-- Card Body -->
+                                    <div class="p-5 flex-grow">
+                                          <div class="flex items-center justify-center h-32 my-4">
+                                                <div class="w-24 h-24 relative">
+                                                      <div class="absolute inset-0 bg-blue-500/20 rounded-lg"></div>
+                                                      <div class="absolute inset-0 flex items-center justify-center">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
+                                                                  <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                                            </svg>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <p class="text-center text-gray-400 mt-2">Unlock rare celestial items and gear!</p>
+                                    </div>
+                                    
+                                    <!-- Card Footer -->
+                                    <div class="p-5 border-t border-gray-700 mt-auto">
+                                          <button id="buy-celestial-key" type="button" data-amount="3900" data-name="Celestial Crate Key" class="w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-400 hover:to-cyan-400 rounded-lg text-white font-semibold shadow-lg hover:shadow-blue-500/30 transition duration-300 flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                                      <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                                </svg>
+                                                Buy Celestial Key
+                                          </button>
+                                    </div>
+                              </div>
+
+                              <!-- Eternal Crate Key -->
+                              <div class="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl shadow-xl overflow-hidden hover:shadow-green-500/20 transition duration-300 ease-in-out transform hover:scale-[1.02] flex flex-col">
+                                    <!-- Card Header -->
+                                    <div class="relative p-5 border-b border-gray-700 bg-gradient-to-r from-green-900/20 to-emerald-900/20">
+                                          <div class="flex justify-between items-start">
+                                                <div>
+                                                      <h3 class="text-white text-xl font-bold">Eternal Crate Key</h3>
+                                                </div>
+                                                <div class="bg-green-600/30 p-2 rounded-lg">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                                                      </svg>
+                                                </div>
+                                          </div>
+                                          <div class="mt-4">
+                                                <h3 class="text-white text-3xl font-bold">₹69</h3>
+                                          </div>
+                                    </div>
+
+                                    <!-- Card Body -->
+                                    <div class="p-5 flex-grow">
+                                          <div class="flex items-center justify-center h-32 my-4">
+                                                <div class="w-24 h-24 relative">
+                                                      <div class="absolute inset-0 bg-green-500/20 rounded-lg"></div>
+                                                      <div class="absolute inset-0 flex items-center justify-center">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                                                                  <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                                            </svg>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <p class="text-center text-gray-400 mt-2">Discover eternal treasures and powerful gear!</p>
+                                    </div>
+                                    
+                                    <!-- Card Footer -->
+                                    <div class="p-5 border-t border-gray-700 mt-auto">
+                                          <button id="buy-eternal-key" type="button" data-amount="6900" data-name="Eternal Crate Key" class="w-full py-3 px-4 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 rounded-lg text-white font-semibold shadow-lg hover:shadow-green-500/30 transition duration-300 flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                                      <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                                </svg>
+                                                Buy Eternal Key
+                                          </button>
+                                    </div>
+                              </div>
+
+                              <!-- Omega Crate Key -->
+                              <div class="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl shadow-xl overflow-hidden hover:shadow-orange-500/20 transition duration-300 ease-in-out transform hover:scale-[1.02] flex flex-col">
+                                    <!-- Card Header -->
+                                    <div class="relative p-5 border-b border-gray-700 bg-gradient-to-r from-orange-900/20 to-amber-900/20">
+                                          <div class="flex justify-between items-start">
+                                                <div>
+                                                      <h3 class="text-white text-xl font-bold">Omega Crate Key</h3>
+                                                </div>
+                                                <div class="bg-orange-600/30 p-2 rounded-lg">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                                                      </svg>
+                                                </div>
+                                          </div>
+                                          <div class="mt-4">
+                                                <h3 class="text-white text-3xl font-bold">₹79</h3>
+                                          </div>
+                                    </div>
+
+                                    <!-- Card Body -->
+                                    <div class="p-5 flex-grow">
+                                          <div class="flex items-center justify-center h-32 my-4">
+                                                <div class="w-24 h-24 relative">
+                                                      <div class="absolute inset-0 bg-orange-500/20 rounded-lg"></div>
+                                                      <div class="absolute inset-0 flex items-center justify-center">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-orange-400" viewBox="0 0 20 20" fill="currentColor">
+                                                                  <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                                            </svg>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <p class="text-center text-gray-400 mt-2">The ultimate key for legendary loot!</p>
+                                    </div>
+                                    
+                                    <!-- Card Footer -->
+                                    <div class="p-5 border-t border-gray-700 mt-auto">
+                                          <button id="buy-omega-key" type="button" data-amount="7900" data-name="Omega Crate Key" class="w-full py-3 px-4 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-400 hover:to-amber-400 rounded-lg text-white font-semibold shadow-lg hover:shadow-orange-500/30 transition duration-300 flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                                      <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                                </svg>
+                                                Buy Omega Key
+                                          </button>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+
+            </section>
+      
+      </main>
+
+
+      <!-- footer  -->
+
+      <footer class="bg-gray-800 text-white py-8 border-t border-gray-700">
+            <div class="max-w-6xl mx-auto px-4">
+                  <!-- Top section with IP and links -->
+                  <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+                        <!-- Server IP (Left side on desktop) -->
+                        <div class="flex items-center mb-4 md:mb-0">
+                              <div class="font-mono text-green-500 text-lg font-bold border border-green-500 rounded-md px-4 py-2 bg-gray-900/50">
+                                    PLAY.HORIZION.IN
+                              </div>
+                        </div>
+                        
+                        <!-- Navigation links (Right side on desktop) -->
+                        <div class="flex flex-wrap justify-center">
+                              <a href="./privacypolicy.html" class="text-sm text-gray-400 hover:text-white mx-2 my-1">Privacy Policy</a>
+                              <a href="./terms&conditions.html" class="text-sm text-gray-400 hover:text-white mx-2 my-1">Terms and Conditions</a>
+                              <a href="./refundpolicy.html" class="text-sm text-gray-400 hover:text-white mx-2 my-1">Refund Policy</a>
+                              <a href="./contactus.html" class="text-sm text-gray-400 hover:text-white mx-2 my-1">Contact Us</a>
+                        </div>
+                  </div>
+                  
+                  <!-- Bottom section with copyright and credits -->
+                  <div class="pt-4 border-t border-gray-700 text-center">
+                        <p class="text-sm text-gray-400 mb-2">© 2025 Horizion Network. All Rights Reserved.</p>
+                        <div class="text-xs text-gray-400">Made with <span class="text-red-500">❤️</span> by Mafia164</div>
+                        <div class="text-xs text-gray-500 mt-1">We are not affiliated with Mojang AB or Minecraft.</div>
+                  </div>
+            </div>
+      </footer>
+
+      <!-- Payment Integration Script -->
+      <script src="payment.js"></script>
+      
+      <!-- Main Site JavaScript -->
+      <script src="script.js"></script>
+      
+      <!-- JavaScript moved to script.js -->
+      <!-- CSS moved to src/input.css -->
+</body>
+</html>
