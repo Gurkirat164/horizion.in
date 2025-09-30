@@ -63,16 +63,16 @@ window.onload = () => {
                         e.preventDefault();
                         
                         // Get product details from data attributes
-                        const amount = button.dataset.amount;
                         const productName = button.dataset.name;
+                        const serviceId = button.dataset.serviceId; // Get service ID
                         
                         // Provide a default customer name if not set
                         const customerName = "Minecraft Player";
                         const customerEmail = "";
                         
                         try {
-                              // Call the payment function from payment.js
-                              await initiatePayment(amount, customerName, customerEmail);
+                              // Call the payment function from payment.js (amount will be determined by serviceId)
+                              await initiatePayment(null, customerName, customerEmail, serviceId);
                         } catch (error) {
                               console.error("Payment initialization failed:", error);
                               alert("Payment could not be initiated. Please try again later.");

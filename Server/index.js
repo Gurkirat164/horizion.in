@@ -78,6 +78,60 @@ app.post("/verify-payment", express.json(), (req, res) => {
   }
 });
 
+
+// Route to fetch service data (secure server-side handling)
+app.post('/get-service-data', (req, res) => {
+    const { serviceId } = req.body;
+    let serviceData = {};
+
+    switch (serviceId) {
+        case 'VIPRank':
+            serviceData = { 
+                service_name : "VIPRank",
+                description: "Detailed description for Service 101929309390", 
+                price: 89900, // Price in paisa (₹89)
+                service_id: 1, 
+            };
+            break;
+        case 'MVPRank':
+            serviceData = { 
+                service_name : "MVPRank",
+                description: "Detailed description for Service 2", 
+                price: 16900, // Price in paisa (₹169)
+                service_id: 2, 
+            };
+            break;
+        case 'EliteRank':
+            serviceData = { 
+                service_name : "EliteRank",
+                description: "Detailed description for Service 3", 
+                price: 27900, // Price in paisa (₹279)
+                service_id: 3, 
+            };
+            break;
+
+        case 'ImmortalRank':
+            serviceData = { 
+                service_name : "ImmortalRank",
+                description: "Detailed description for Service 4", 
+                price: 39900, // Price in paisa (₹399)
+                service_id: 4, 
+            };
+            break;
+
+
+        default:
+            return res.status(400).json({ error: 'Invalid service' });
+    }
+
+    res.json(serviceData); // Send service data securely
+});
+
+
+
+
+
+
 // (Optional) Razorpay Webhook endpoint for automated events
 app.post("/webhook", express.raw({ type: 'application/json' }), (req, res) => {
   const shasum = crypto.createHmac('sha256', RAZORPAY_KEY_SECRET);

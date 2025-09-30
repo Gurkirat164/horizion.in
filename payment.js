@@ -4,45 +4,79 @@
  */
 
 // Function to create order and open Razorpay payment form
-async function initiatePayment(amount, customerName, customerEmail) {
+async function initiatePayment(amount, customerName, customerEmail, serviceId) {
   try {
-    // Step 1: Create order on your server
-    // const response = await fetch('http://localhost:3000/create-order', {
-    const response = await fetch('https://horizion-in.onrender.com/create-order', {
+    // Validate required parameters
+    if (!serviceId) {
+      alert('Service ID is required for payment processing');
+      return;
+    }
+
+    // Step 1: Fetch service details
+    // const serviceResponse = await fetch('http://localhost:3000/get-service-data', {
+    const serviceResponse = await fetch('https://horizion-in.onrender.com/get-service-data', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ serviceId })
+    });
+
+    if (!serviceResponse.ok) throw new Error('Failed to fetch service data');
+    const serviceData = await serviceResponse.json();
+
+    if (serviceData.error) {
+      alert(serviceData.error);
+      return;
+    }
+
+    const { service_name, service_id, description, price } = serviceData;
+    const finalAmount = price || amount; // Use price from service data if available
+    
+    if (!finalAmount) {
+      alert('Unable to determine price for this service');
+      return;
+    }
+
+    // Step 2: Create order on your server
+    const orderResponse = await fetch('https://horizion-in.onrender.com/create-order', {
+    // const orderResponse = await fetch('http://localhost:3000/create-order', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        amount: amount, // Amount in INR
+        amount: finalAmount, // Amount in INR
       }),
     });
-    
-    const orderData = await response.json();
-    
-    // Step 2: Get Razorpay Key from server
-    // const keyResponse = await fetch('http://localhost:3000/get-razorpay-key');
+
+    if (!orderResponse.ok) throw new Error('Failed to create order');
+    const orderData = await orderResponse.json();
+
+    // Step 3: Get Razorpay Key from server
     const keyResponse = await fetch('https://horizion-in.onrender.com/get-razorpay-key');
+    // const keyResponse = await fetch('http://localhost:3000/get-razorpay-key');
+    if (!keyResponse.ok) throw new Error('Failed to get Razorpay key');
     const { key } = await keyResponse.json();
-    
-    // Step 3: Initialize Razorpay checkout
+
+    // Step 4: Initialize Razorpay checkout
     const options = {
       key: key,
       amount: orderData.amount,
       currency: orderData.currency,
+      app_id: service_id,
+      app_name: service_name,
       name: 'Horizion Network',
-      description: 'Premium Rank Purchase',
+      description: description || 'Premium Rank Purchase',
       image: './img/favicon.png', // URL of your logo
       order_id: orderData.id,
       handler: async function (response) {
-        // Step 4: Verify payment with your server
+        // Step 5: Verify payment with your server
         try {
           const verifyRequestBody = {
             razorpay_order_id: response.razorpay_order_id,
             razorpay_payment_id: response.razorpay_payment_id,
             razorpay_signature: response.razorpay_signature
           };
-          
+
           // const paymentVerifyResponse = await fetch('http://localhost:3000/verify-payment', {
           const paymentVerifyResponse = await fetch('https://horizion-in.onrender.com/verify-payment', {
             method: 'POST',
@@ -51,13 +85,11 @@ async function initiatePayment(amount, customerName, customerEmail) {
             },
             body: JSON.stringify(verifyRequestBody),
           });
-          
+
           const paymentVerifyData = await paymentVerifyResponse.json();
-          
+
           if (paymentVerifyData.success) {
             // Payment successful
-            
-            // Show success message
             const successMsg = document.createElement('div');
             successMsg.style.position = 'fixed';
             successMsg.style.top = '50%';
@@ -71,22 +103,15 @@ async function initiatePayment(amount, customerName, customerEmail) {
             successMsg.style.zIndex = '1000';
             successMsg.innerHTML = `
               <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">Payment Successful!</h3>
-              <p>Transaction ID: ${response.razorpay_payment_id}</p>`
-//              <p style="margin-top: 15px; font-size: 14px;">Redirecting to account page...</p>`
-            ;
+              <p>Transaction ID: ${response.razorpay_payment_id}</p>
+            `;
             document.body.appendChild(successMsg);
-            
-            // Redirect after a delay
-            // setTimeout(() => {
-            //   window.location.href = "./index.html";
-            // }, 3000);
+            // Optionally redirect after a delay
+            // setTimeout(() => { window.location.href = "./index.html"; }, 3000);
           } else {
-            // Payment verification failed
-            // Show detailed error message
-            const errorMessage = paymentVerifyData.message 
-              ? `Payment verification failed: ${paymentVerifyData.message}` 
+            const errorMessage = paymentVerifyData.message
+              ? `Payment verification failed: ${paymentVerifyData.message}`
               : 'Payment verification failed. Please contact support with your payment ID: ' + response.razorpay_payment_id;
-            
             alert(errorMessage);
           }
         } catch (verifyError) {
@@ -98,13 +123,13 @@ async function initiatePayment(amount, customerName, customerEmail) {
         email: customerEmail
       },
       theme: {
-        color: '#2fa101' // Use your brand color
+        color: '#2fa101'
       }
     };
-    
+
     const razorpay = new window.Razorpay(options);
     razorpay.open();
-    
+
   } catch (error) {
     alert('Something went wrong. Please try again later.');
   }
@@ -113,19 +138,18 @@ async function initiatePayment(amount, customerName, customerEmail) {
 document.addEventListener("DOMContentLoaded", () => {
   const payButton = document.getElementById('pay-btn');
   if (payButton) {
-    // Add click event listener
     payButton.addEventListener('click', async (e) => {
       e.preventDefault();
-      
-      // Get payment amount from data attribute or use default
-      const amount = payButton.dataset.amount;
-      
-      // Get customer details (can be customized to get from form fields)
       const customerName = payButton.dataset.name || "Horizion Player";
       const customerEmail = payButton.dataset.email || "";
+      const serviceId = payButton.dataset.serviceId; // Get service ID from data attribute
       
-      // Start payment process
-      await initiatePayment(amount, customerName, customerEmail);
+      if (!serviceId) {
+        alert('Service ID is required for payment processing');
+        return;
+      }
+      
+      await initiatePayment(null, customerName, customerEmail, serviceId);
     });
   }
 });
