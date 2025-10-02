@@ -4,8 +4,8 @@
  */
 
 // Configuration - Change this URL to switch between environments
-// window.API_BASE_URL = 'https://horizion-in.onrender.com';
-window.API_BASE_URL = 'http://localhost:3000';
+window.API_BASE_URL = 'https://horizion-in.onrender.com';
+// window.API_BASE_URL = 'http://localhost:3000';
 
 // Function to create order and open Razorpay payment form
 async function initiatePayment(amount, serviceId, minecraftUsername = null, isBedrockUser = false) {

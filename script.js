@@ -10,8 +10,6 @@ let sidebarList = document.querySelectorAll(".sidebar-list")
 
 // Configuration - API URLs
 const api = "https://api.mcstatus.io/v2/status/java/play.horizion.in:25565"
-// API_BASE_URL is defined in payment.js - don't redeclare it here
-
 
 window.onload = () => {
       // Start with sidebar hidden (translated off-screen)
