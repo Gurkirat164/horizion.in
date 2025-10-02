@@ -71,14 +71,32 @@ export async function sendPaymentNotification(paymentData) {
                   .setTimestamp()
                   .setFooter({
                         text: "Horizion Network - Payment System",
-                        iconURL: "https://cdn.discordapp.com/attachments/your-icon-here", // Replace with your server icon
+                        iconURL: "https://media.discordapp.net/attachments/1230955207832371280/1230955313021063400/Untitled_design__4_-removebg-preview.png?ex=68df73b8&is=68de2238&hm=50fe6cf06427831fcf04fb99691334fecfc3cc61427131634e5deb740e75a6e1&=&format=webp&quality=lossless&width=625&height=625", // Replace with your server icon
                   });
 
             // Add customer info if available
-            if (paymentData.customerEmail) {
+            if (paymentData.minecraftUsername) {
                   embed.addFields({
-                        name: "📧 Customer",
-                        value: paymentData.customerEmail,
+                        name: "🎮 Minecraft Username",
+                        value: paymentData.minecraftUsername,
+                        inline: true,
+                  });
+            }
+
+            // Add platform information
+            if (paymentData.minecraftUsername) {
+                  const platform = paymentData.isBedrockUser ? "🔄 Bedrock Edition" : "☕ Java Edition";
+                  embed.addFields({
+                        name: "� Platform",
+                        value: platform,
+                        inline: true,
+                  });
+            }
+
+            if (paymentData.customerName) {
+                  embed.addFields({
+                        name: "� Customer Name",
+                        value: paymentData.customerName,
                         inline: true,
                   });
             }

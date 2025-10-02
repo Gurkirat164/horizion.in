@@ -69,7 +69,8 @@ app.post("/verify-payment", express.json(), async (req, res) => {
           paymentId: razorpay_payment_id,
           serviceName: serviceData?.service_name || 'Unknown Service',
           amount: serviceData?.price || 0,
-          customerEmail: serviceData?.customerEmail || null
+          minecraftUsername: serviceData?.minecraft_username || null,
+          isBedrockUser: serviceData?.is_bedrock_user || false
         });
       } catch (discordError) {
         console.error('Discord notification failed:', discordError);
@@ -101,7 +102,7 @@ app.post('/get-service-data', (req, res) => {
     switch (serviceId) {
         case 'VIPRank':
             serviceData = { 
-                service_name : "VIPRank",
+                service_name : "VIP Rank",
                 description: "Detailed description for Service 101929309390", 
                 price: 8900, // Price in paisa (₹89)
                 service_id: 1, 
@@ -109,7 +110,7 @@ app.post('/get-service-data', (req, res) => {
             break;
         case 'MVPRank':
             serviceData = { 
-                service_name : "MVPRank",
+                service_name : "MVP Rank",
                 description: "Detailed description for Service 2", 
                 price: 16900, // Price in paisa (₹169)
                 service_id: 2, 
@@ -117,7 +118,7 @@ app.post('/get-service-data', (req, res) => {
             break;
         case 'EliteRank':
             serviceData = { 
-                service_name : "EliteRank",
+                service_name : "Elite Rank",
                 description: "Detailed description for Service 3", 
                 price: 27900, // Price in paisa (₹279)
                 service_id: 3, 
@@ -125,7 +126,7 @@ app.post('/get-service-data', (req, res) => {
             break;
         case 'ImmortalRank':
             serviceData = { 
-                service_name : "ImmortalRank",
+                service_name : "Immortal Rank",
                 description: "Detailed description for Service 4", 
                 price: 39900, // Price in paisa (₹399)
                 service_id: 4, 
@@ -133,7 +134,7 @@ app.post('/get-service-data', (req, res) => {
             break;
         case 'VoidKey':
             serviceData = { 
-                service_name : "VoidKey",
+                service_name : "Void Key",
                 description: "Detailed description for Service 5", 
                 price: 1900, // Price in paisa (₹19)
                 service_id: 5, 
@@ -141,7 +142,7 @@ app.post('/get-service-data', (req, res) => {
             break;
         case 'CelestialKey':
             serviceData = { 
-                service_name : "CelestialKey",
+                service_name : "Celestial Key",
                 description: "Detailed description for Service 6", 
                 price: 3900, // Price in paisa (₹39)
                 service_id: 6, 
@@ -149,7 +150,7 @@ app.post('/get-service-data', (req, res) => {
             break;
         case 'EternalKey':
             serviceData = { 
-                service_name : "EternalKey",
+                service_name : "Eternal Key",
                 description: "Detailed description for Service 6", 
                 price: 6900, // Price in paisa (₹69)
                 service_id: 7, 
@@ -157,7 +158,7 @@ app.post('/get-service-data', (req, res) => {
             break;
         case 'OmegaKey':
             serviceData = { 
-                service_name : "OmegaKey",
+                service_name : "Omega Key",
                 description: "Detailed description for Service 6", 
                 price: 7900, // Price in paisa (₹79)
                 service_id: 8, 

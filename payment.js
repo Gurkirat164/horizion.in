@@ -3,8 +3,12 @@
  * Production version
  */
 
+// Configuration - Change this URL to switch between environments
+// window.API_BASE_URL = 'https://horizion-in.onrender.com';
+window.API_BASE_URL = 'http://localhost:3000';
+
 // Function to create order and open Razorpay payment form
-async function initiatePayment(amount, customerName, customerEmail, serviceId) {
+async function initiatePayment(amount, serviceId, minecraftUsername = null, isBedrockUser = false) {
   try {
     // Validate required parameters
     if (!serviceId) {
@@ -13,8 +17,7 @@ async function initiatePayment(amount, customerName, customerEmail, serviceId) {
     }
 
     // Step 1: Fetch service details
-    // const serviceResponse = await fetch('http://localhost:3000/get-service-data', {
-    const serviceResponse = await fetch('https://horizion-in.onrender.com/get-service-data', {
+    const serviceResponse = await fetch(`${window.API_BASE_URL}/get-service-data`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ serviceId })
@@ -37,8 +40,7 @@ async function initiatePayment(amount, customerName, customerEmail, serviceId) {
     }
 
     // Step 2: Create order on your server
-    const orderResponse = await fetch('https://horizion-in.onrender.com/create-order', {
-    // const orderResponse = await fetch('http://localhost:3000/create-order', {
+    const orderResponse = await fetch(`${window.API_BASE_URL}/create-order`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -52,8 +54,7 @@ async function initiatePayment(amount, customerName, customerEmail, serviceId) {
     const orderData = await orderResponse.json();
 
     // Step 3: Get Razorpay Key from server
-    const keyResponse = await fetch('https://horizion-in.onrender.com/get-razorpay-key');
-    // const keyResponse = await fetch('http://localhost:3000/get-razorpay-key');
+    const keyResponse = await fetch(`${window.API_BASE_URL}/get-razorpay-key`);
     if (!keyResponse.ok) throw new Error('Failed to get Razorpay key');
     const { key } = await keyResponse.json();
 
@@ -62,12 +63,24 @@ async function initiatePayment(amount, customerName, customerEmail, serviceId) {
       key: key,
       amount: orderData.amount,
       currency: orderData.currency,
-      app_id: service_id,
-      app_name: service_name,
       name: 'Horizion Network',
       description: description || 'Premium Rank Purchase',
       image: './img/favicon.png', // URL of your logo
       order_id: orderData.id,
+      
+      // Notes to be saved with payment
+      notes: {
+        service_name: service_name,
+        service_id: service_id,
+        minecraft_username: minecraftUsername || 'Unknown Player',
+        is_bedrock_user: isBedrockUser
+      },
+      
+      // Theme
+      theme: {
+        color: '#2fa101'
+      },
+      
       handler: async function (response) {
         // Step 5: Verify payment with your server
         try {
@@ -79,14 +92,14 @@ async function initiatePayment(amount, customerName, customerEmail, serviceId) {
             serviceData: {
               service_name: service_name,
               price: finalAmount,
-              customerEmail: customerEmail,
               service_id: service_id,
-              description: description
+              description: description,
+              minecraft_username: minecraftUsername || 'Unknown Player',
+              is_bedrock_user: isBedrockUser
             }
           };
 
-          // const paymentVerifyResponse = await fetch('http://localhost:3000/verify-payment', {
-          const paymentVerifyResponse = await fetch('https://horizion-in.onrender.com/verify-payment', {
+          const paymentVerifyResponse = await fetch(`${window.API_BASE_URL}/verify-payment`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -125,13 +138,6 @@ async function initiatePayment(amount, customerName, customerEmail, serviceId) {
         } catch (verifyError) {
           alert('Error verifying payment. Please contact support with your payment ID: ' + response.razorpay_payment_id);
         }
-      },
-      prefill: {
-        name: customerName,
-        email: customerEmail
-      },
-      theme: {
-        color: '#2fa101'
       }
     };
 
@@ -148,8 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (payButton) {
     payButton.addEventListener('click', async (e) => {
       e.preventDefault();
-      const customerName = payButton.dataset.name || "Horizion Player";
-      const customerEmail = payButton.dataset.email || "";
       const serviceId = payButton.dataset.serviceId; // Get service ID from data attribute
       
       if (!serviceId) {
@@ -157,7 +161,36 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
       
-      await initiatePayment(null, customerName, customerEmail, serviceId);
+      // First get service data to show in Minecraft username modal
+      try {
+        const serviceResponse = await fetch(`${window.API_BASE_URL}/get-service-data`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ serviceId })
+        });
+
+        if (!serviceResponse.ok) throw new Error('Failed to fetch service data');
+        const serviceData = await serviceResponse.json();
+
+        if (serviceData.error) {
+          alert(serviceData.error);
+          return;
+        }
+
+        // Show Minecraft username modal first
+        showMinecraftUsernameModal({
+          name: serviceData.service_name,
+          price: serviceData.price
+        }, async (minecraftUsername, isBedrockUser) => {
+          // After getting Minecraft username and bedrock status, initiate payment
+          await initiatePayment(null, serviceId, minecraftUsername, isBedrockUser);
+        });
+        
+      } catch (error) {
+        console.error('Failed to fetch service data:', error);
+        // Fallback to payment without Minecraft username
+        await initiatePayment(null, serviceId);
+      }
     });
   }
 });

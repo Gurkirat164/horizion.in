@@ -8,7 +8,10 @@ let statusOffline = document.querySelector("#status-offline");
 let playerCount = document.querySelector(".player-count")
 let sidebarList = document.querySelectorAll(".sidebar-list")
 
+// Configuration - API URLs
 const api = "https://api.mcstatus.io/v2/status/java/play.horizion.in:25565"
+// API_BASE_URL is defined in payment.js - don't redeclare it here
+
 
 window.onload = () => {
       // Start with sidebar hidden (translated off-screen)
@@ -61,16 +64,45 @@ window.onload = () => {
                         const productName = button.dataset.name;
                         const serviceId = button.dataset.serviceId; // Get service ID
                         
-                        // Provide a default customer name if not set
-                        const customerName = "Minecraft Player";
-                        const customerEmail = "";
-                        
                         try {
-                              // Call the payment function from payment.js (amount will be determined by serviceId)
-                              await initiatePayment(null, customerName, customerEmail, serviceId);
+                              // First get service data to show in Minecraft username modal
+                              const serviceResponse = await fetch(`${window.API_BASE_URL}/get-service-data`, {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({ serviceId })
+                              });
+
+                              if (!serviceResponse.ok) throw new Error('Failed to fetch service data');
+                              const serviceData = await serviceResponse.json();
+
+                              if (serviceData.error) {
+                                    alert(serviceData.error);
+                                    return;
+                              }
+
+                              // Show Minecraft username modal first
+                              showMinecraftUsernameModal({
+                                    name: serviceData.service_name,
+                                    price: serviceData.price
+                              }, async (minecraftUsername, isBedrockUser) => {
+                                    // After getting Minecraft username and bedrock status, initiate payment
+                                    try {
+                                          await initiatePayment(null, serviceId, minecraftUsername, isBedrockUser);
+                                    } catch (error) {
+                                          console.error("Payment initialization failed:", error);
+                                          alert("Payment could not be initiated. Please try again later.");
+                                    }
+                              });
+                              
                         } catch (error) {
-                              console.error("Payment initialization failed:", error);
-                              alert("Payment could not be initiated. Please try again later.");
+                              console.error("Failed to fetch service data:", error);
+                              // Fallback to payment without Minecraft username
+                              try {
+                                    await initiatePayment(null, serviceId);
+                              } catch (paymentError) {
+                                    console.error("Payment initialization failed:", paymentError);
+                                    alert("Payment could not be initiated. Please try again later.");
+                              }
                         }
                   });
             });
