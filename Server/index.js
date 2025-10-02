@@ -5,6 +5,7 @@ import cors from "cors";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 import crypto from "crypto";
+import { sendPaymentNotification, sendCustomMessage } from "./bot.js";
 
 // Get the directory path of the current module
 const __filename = fileURLToPath(import.meta.url);
@@ -43,9 +44,9 @@ app.post("/create-order", async (req, res) => {
 });
 
 // Payment verification endpoint
-app.post("/verify-payment", express.json(), (req, res) => {
+app.post("/verify-payment", express.json(), async (req, res) => {
   try {
-    const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
+    const { razorpay_order_id, razorpay_payment_id, razorpay_signature, serviceData } = req.body;
     
     // Check that we have all required data
     if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
@@ -61,7 +62,20 @@ app.post("/verify-payment", express.json(), (req, res) => {
     const generatedSignature = hmac.digest('hex');
 
     if (generatedSignature === razorpay_signature) {
-      // Payment is successful
+      // Payment is successful - send Discord notification
+      try {
+        await sendPaymentNotification({
+          orderId: razorpay_order_id,
+          paymentId: razorpay_payment_id,
+          serviceName: serviceData?.service_name || 'Unknown Service',
+          amount: serviceData?.price || 0,
+          customerEmail: serviceData?.customerEmail || null
+        });
+      } catch (discordError) {
+        console.error('Discord notification failed:', discordError);
+        // Don't fail the payment verification if Discord fails
+      }
+      
       res.json({ success: true, message: "Payment has been verified" });
     } else {
       // Payment verification failed

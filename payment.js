@@ -74,7 +74,15 @@ async function initiatePayment(amount, customerName, customerEmail, serviceId) {
           const verifyRequestBody = {
             razorpay_order_id: response.razorpay_order_id,
             razorpay_payment_id: response.razorpay_payment_id,
-            razorpay_signature: response.razorpay_signature
+            razorpay_signature: response.razorpay_signature,
+            // Include service data for Discord notification
+            serviceData: {
+              service_name: service_name,
+              price: finalAmount,
+              customerEmail: customerEmail,
+              service_id: service_id,
+              description: description
+            }
           };
 
           // const paymentVerifyResponse = await fetch('http://localhost:3000/verify-payment', {

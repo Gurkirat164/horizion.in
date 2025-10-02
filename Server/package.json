@@ -6,10 +6,16 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start:bot": "node bot.js",
+    "dev:bot": "nodemon bot.js",
+    "start:all": "concurrently \"npm run start\" \"npm run start:bot\"",
+    "dev:all": "concurrently \"npm run dev\" \"npm run dev:bot\""
   },
   "dependencies": {
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
+    "discord.js": "^14.22.1",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "razorpay": "^2.9.6"
