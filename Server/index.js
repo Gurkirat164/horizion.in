@@ -29,6 +29,25 @@ const razorpay = new Razorpay({
   key_secret: RAZORPAY_KEY_SECRET
 });
 
+// Health check endpoint - returns 200 when server is running
+app.get("/", (req, res) => {
+  res.status(200).json({
+    status: "OK",
+    message: "Horizion Server is running",
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime()
+  });
+});
+
+// Alternative health check endpoint
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "healthy",
+    service: "Horizion Payment Server",
+    timestamp: new Date().toISOString()
+  });
+});
+
 app.post("/create-order", async (req, res) => {
   try {
     const amount = parseInt(req.body.amount);
